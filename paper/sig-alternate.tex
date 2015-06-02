@@ -55,7 +55,7 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{some title}
+\title{Benchmarking for emotion recognition in DEAP dataset}
 
 
 %
@@ -171,11 +171,34 @@ In this research, due to the convenient pre-processing carried out, we chose to 
 
 To get a sense of the dataset we started doing a exploratory data analysis of it. 	
 	
-	\subsection{Experimental Design Overview}
-	\subsubsection{Independent Variable}
-	\subsubsection{Dependent Variable }
-	\subsubsection{Controlled Factors}
-	\subsubsection{Threats to Validity}	
+\subsection{Takahashi method (2004)}	
+
+In 2004, Kazuhiko Takahashi published his work called \textit{REMARKS ON EMOTION RECOGNITION FROM MULTI-MODAL BIO-POTENTIAL SIGNALS}~\cite{takahashi2004}. This research aimed to achieve a classification of 5 emotions (joy, anger, sadness, fear, and relax) using multi-modal biopotential signals such as brain signals, pulse and skin conductance. He did experiments in order to collect data and then make a posterior analysis using algorithms like Support Vector Machine and Artificial Neural Networks. His results reached a precision of 41.7\% for 5 emotions and 66.7\% for 3 emotions. 
+
+This work is one of the first that tries to use machine learning algorithms over biological signals features for emotion recognition. In order to see how this field has been growing over last decade, this research is a good candidate to start the list of included works in the benchmark.  
+
+\subsubsection{Experiment and Data}
+
+
+\subsubsection{Feature Extraction}
+
+To characterize the data this work used the next statistical features:
+\begin{enumerate}
+\item Mean ($\mu_{X}$)
+\item Standard Deviation ($\sigma_{X}$)
+\item Mean of absolute differences \\ \\ $\delta_{X} = \frac{1}{N-1} \sum^{N-1}_{n=1}|X(n+1)-X(n)|$
+\item Mean of normalized absolute differences ($\overline{\delta_{X}} = \frac{\delta_{X}}{\sigma_{X}}$)
+\item Mean of absolute second differences \\ \\ $\gamma_{X} = \frac{1}{N-2} \sum^{N-2}_{n=1}|X(n+2)-X(n)|$
+\item Mean of normalized absolute second differences \\ ($\overline{\gamma_{X}} = \frac{\gamma_{X}}{\sigma_{X}}$)
+\end{enumerate}  
+
+\subsubsection{Emotion Recognition Method}
+	
+\subsection{Experimental Design Overview}
+\subsubsection{Independent Variable}
+\subsubsection{Dependent Variable }
+\subsubsection{Controlled Factors}
+\subsubsection{Threats to Validity}	
 
 \section{Results and Analysis}
 
