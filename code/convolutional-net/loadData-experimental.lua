@@ -7,16 +7,46 @@ function string:split(sep)
   return fields
 end
 
-local filePath = '/home/ubuntu/EEG/code/data.txt'
-local data     = torch.Tensor(3, 3)
+--toy example
+--local filePath = '/home/ubuntu/EEG/code/data.txt'
+--real file
+local filePath = '/home/ubuntu/EEG_data/txt1/s01.txt'
 
-local i = 1
+
+--Get rows, cols
+local nrows = 0 
+for line in io.lines(filePath) do
+        ncols = #line:split(' ')
+        nrows = nrows + 1
+end
+
+print(nrows)
+print(ncols)
+
+local data     = torch.Tensor(nrows, ncols)
+
+local i = 0
 for line in io.lines(filePath) do
 	local l = line:split(' ')
 	for key, val in ipairs(l) do
-		data[i][key] = val
+		data[i+1][key] = val
    	end
 	i = i + 1
 end
 
-print(data)
+
+--comando util para testing: 
+--head -n 1 file.txt | cut -c-20
+--print(data[1][1])
+print(data:size())
+
+--segment:
+
+d = torch.Tensor(data)
+print(d:size()) 
+
+trials = d:chunk(40,2)
+
+print(trials[1]:size())
+
+
