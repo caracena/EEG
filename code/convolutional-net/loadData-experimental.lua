@@ -1,9 +1,13 @@
 require 'torch'
+require 'nn'
 
 local filePath = '/home/ubuntu/EEG_data/s'
 local labelPath = '/home/ubuntu/EEG_labels/labels.csv'
 
 nusers = 1
+nchannels = 40
+n_feature_maps = 10
+
 -------------------------
 
 function string:split(sep)
@@ -13,7 +17,26 @@ function string:split(sep)
   return fields
 end
 
--- retorna 40 chunks(trials) de (8064x40)
+-------------------------
+function loadLabels(path)
+ local v = torch.Tensor(40)
+ local i = 1 
+ for line in io.lines(path) do
+  local l = line:split(",")
+  for key, val in ipairs(l) do
+   v[i] = val
+  end
+  i=i+1
+ end
+ return v
+end
+-------------------------
+function getLabelVector(v, class)
+ x = torch.Tensor(6):zero()
+ x[class-2] = 1
+ return x
+end
+-------------------------
 function loadUserData(path)
 
  local nrows = 0
@@ -22,7 +45,7 @@ function loadUserData(path)
         nrows = nrows + 1
  end
 
- local data = torch.Tensor(nrows, ncols)
+ local data = torch.Tensor(nrows, ncols,1)
 
  local i = 0
  for line in io.lines(path) do
@@ -36,15 +59,63 @@ function loadUserData(path)
  trials  = d:chunk(40,2)
  return trials
 end
+---------------------------
+
+--input = torch.rand(8046, 40,1)
+--print(input:size())
+
+input = loadUserData('/home/ubuntu/EEG_data/s01.txt')
+print(input[1]:size())
+
+n_feature_maps = 10
+mlp = nn.Sequential()
+
+main_model=nn.Parallel(2,1) 
+for i = 1,40 do -- using 40 channels
+    local model = nn.Sequential()
+    model:add(nn.TemporalConvolution(1,n_feature_maps,5))
+    model:add(nn.Sigmoid())
+    model:add(nn.TemporalSubSampling(n_feature_maps,2,2))
+
+    model:add(nn.TemporalConvolution(n_feature_maps,n_feature_maps,5))
+    model:add(nn.Sigmoid())
+    model:add(nn.TemporalSubSampling(n_feature_maps,2,2))
+   
+    main_model:add(model)
+end
+
+mlp:add(main_model)
+mlp:add(nn.Reshape(1,n_feature_maps*80520))
+
+mlp:add(nn.Linear(n_feature_maps*80520,732))
+mlp:add(nn.Sigmoid())
+mlp:add(nn.Linear(732,6))
+
+labels = loadLabels(labelPath)
+y = getLabelVector(labels,8)
+
+pred = mlp:forward(input[1])
+print(pred)
 
 
+-- Training
+criterion = nn.MSECriterion()
+local err = criterion:forward(pred,y)
+print("error "..err)
+local gradCriterion = criterion:backward(pred,y);
+mlp:zeroGradParameters()
+mlp:backward(input[1], gradCriterion); 
+--mlp:updateParameters(0.01);
+
+
+-- Not yet
+--[[
 for i = 1,nusers do
  if i <10 then
-  print(filePath .."0"..i..".txt" )
+  path = filePath .."0"..i..".txt"
  else
-  print(filePath..i..".txt" ) 
+  path = filePath..i..".txt" 
  end
-end 
-
-
-
+ print(path)
+end
+--]]
