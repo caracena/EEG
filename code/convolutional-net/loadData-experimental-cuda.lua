@@ -1,6 +1,9 @@
 require 'torch'
 require 'nn'
 
+require 'cunn'
+require 'cutorch'
+
 local filePath = '/home/ubuntu/EEG_data/s'
 local labelPath = '/home/ubuntu/EEG_labels/labels.csv'
 
@@ -88,9 +91,9 @@ end
 mlp:add(main_model)
 mlp:add(nn.Reshape(1,n_feature_maps*80520))
 
-mlp:add(nn.Linear(n_feature_maps*80520,1000))
+mlp:add(nn.Linear(n_feature_maps*80520,732))
 mlp:add(nn.Sigmoid())
-mlp:add(nn.Linear(1000,6))
+mlp:add(nn.Linear(732,6))
 
 
 -- Lets train
@@ -105,7 +108,7 @@ for u=1,31 do -- 32 es el numero de usuario,dejo uno afuera
  print(path)
  input = loadUserData(path)
 
- for i=1,20 do
+ for i=1,40 do
   y    = getLabelVector(labels,i)
   pred = mlp:forward(input[i])
 
@@ -117,6 +120,6 @@ for u=1,31 do -- 32 es el numero de usuario,dejo uno afuera
   local gradCriterion = criterion:backward(pred,y);
   mlp:zeroGradParameters()
   mlp:backward(input[i], gradCriterion); 
-  mlp:updateParameters(0.02);
+  mlp:updateParameters(0.01);
  end
 end
