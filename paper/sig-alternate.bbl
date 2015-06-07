@@ -1,0 +1,60 @@
+\begin{thebibliography}{1}
+
+\bibitem{Judd_2012}
+T.~Judd, F.~Durand, and A.~Torralba.
+\newblock A benchmark of computational models of saliency to predict human
+  fixations.
+\newblock In {\em MIT Technical Report}, 2012.
+
+\bibitem{deap2011}
+S.~Koelstra, C.~Muhl, M.~Soleymani, J.-S. Lee, A.~Yazdani, T.~Ebrahimi, T.~Pun,
+  A.~Nijholt, and I.~Patras.
+\newblock Deap: A database for emotion analysis ;using physiological signals.
+\newblock {\em Affective Computing, IEEE Transactions on}, 3(1):18--31, Jan
+  2012.
+
+\bibitem{lecun1995convolutional}
+Y.~LeCun and Y.~Bengio.
+\newblock Convolutional networks for images, speech, and time series.
+\newblock {\em The handbook of brain theory and neural networks}, 3361:310,
+  1995.
+
+\bibitem{ILSVRC15}
+O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
+  A.~Karpathy, A.~Khosla, M.~Bernstein, A.~C. Berg, and L.~Fei-Fei.
+\newblock {ImageNet Large Scale Visual Recognition Challenge}.
+\newblock {\em International Journal of Computer Vision (IJCV)}, 2015.
+
+\bibitem{stober2014classifying}
+S.~Stober, D.~J. Cameron, and J.~A. Grahn.
+\newblock Classifying eeg recordings of rhythm perception.
+\newblock In {\em 15th International Society for Music Information Retrieval
+  Conference (ISMIR’14)}, pages 649--654, 2014.
+
+\bibitem{stober2014using}
+S.~Stober, D.~J. Cameron, and J.~A. Grahn.
+\newblock Using convolutional neural networks to recognize rhythm￼ stimuli
+  from electroencephalography recordings.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1449--1457, 2014.
+
+\bibitem{takahashi2004}
+K.~Takahashi.
+\newblock Remarks on emotion recognition from multi-modal bio-potential
+  signals.
+\newblock In {\em Industrial Technology, 2004. IEEE ICIT '04. 2004 IEEE
+  International Conference on}, volume~3, pages 1138--1143 Vol. 3, Dec 2004.
+
+\bibitem{xing2010brief}
+Z.~Xing, J.~Pei, and E.~Keogh.
+\newblock A brief survey on sequence classification.
+\newblock {\em ACM SIGKDD Explorations Newsletter}, 12(1):40--48, 2010.
+
+\bibitem{zheng2014time}
+Y.~Zheng, Q.~Liu, E.~Chen, Y.~Ge, and J.~L. Zhao.
+\newblock Time series classification using multi-channels deep convolutional
+  neural networks.
+\newblock In {\em Web-Age Information Management}, pages 298--310. Springer,
+  2014.
+
+\end{thebibliography}

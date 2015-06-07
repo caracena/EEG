@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sig-alternate.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+Warning--I didn't find a database entry for "Murugappan2010Classification"
+You've used 9 entries,
+            2118 wiz_defined-function locations,
+            556 strings with 5685 characters,
+and the built_in function-call counts, 4106 in all, are:
+= -- 389
+> -- 231
+< -- 5
++ -- 93
+- -- 82
+* -- 305
+:= -- 653
+add.period$ -- 28
+call.type$ -- 9
+change.case$ -- 68
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 154
+empty$ -- 295
+format.name$ -- 82
+if$ -- 871
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 9
+newline$ -- 48
+num.names$ -- 18
+pop$ -- 77
+preamble$ -- 1
+purify$ -- 59
+quote$ -- 0
+skip$ -- 121
+stack$ -- 0
+substring$ -- 251
+swap$ -- 54
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 0
+while$ -- 33
+width$ -- 10
+write$ -- 101
+(There was 1 warning)
