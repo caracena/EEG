@@ -162,20 +162,36 @@ We performed an initial empirical study to compare the collected
 emotion classification methods based on an unified way.  Our results 
 show that...
 
-The rest of the paper is structured as follows. Section \ref{data} explores 
-the publicly  available EEG datasets for emotion recognition.  Section 
+The rest of the paper is structured as follows. Section \ref{data} 
+explores the publicly  available EEG datasets for emotion recognition.  Section 
 \ref{methods} describes what we consider the most representative methods
 for emotion classification, along with a  deep learning alternative. Section \ref{study}
 sets a formal way to unify and compare the performance of the methods. 
 Section \ref{discussion} discusses the results and the limitations of the analysis. Finally,
 Section \ref{conclusion} outlines the conclusions and the future work. 
 
-\section{Data Sources}
+\section{Data Sources Analysis}
 \label{data}
 
-hablar de las diferentes fuentes. comparar cualitativa y cuantitativa mente.. decir por que deap.
+Literature shows several attempts  to provide  robust datasets for EEG based 
+emotion recognition. These approaches differ in many factors, such as  nature 
+of the stimuli and number and type of participants. In this section,  a detailed 
+summary is provided, followed by a qualitative and quantitative
+comparison.  The goal is to highlight the strengths and limitation in order to 
+facilitate the selection, given  a specific goal.
 
-
+\subsection{DEAP}
+Koelstra et al. \cite{deap2011} released the Database for Emotion Analysis 
+using Physiological Signals (DEAP). This dataset contains electroencephalogram 
+and peripheral physiological signals of 32 healthy participants (50\% female), 
+aged between 19 and 37 (mean age 26.9), while they were watching
+40 one-minute long excepts of music videos. For each video, the dataset has 
+a label for valence, arousal, dominance and liking levels according a process 
+that combined  Last.fm application and subjective annotation of subjects.  The data 
+is available include 48 channels (32 EEG channels, 12 peripheral channels, 3 
+unused channels and 1 status channel) at a sample rate of 512Hz. Due to
+ different revision of the hardware, there are some minor differences in the 
+ format, mainly regarding to the order of the  channels.
 
 %For our research we used the famous dataset for the analysis of human affective states called
  %Database for Emotion Analysis using Physiological Signals (DEAP)~\cite{deap2011}. This
@@ -225,6 +241,16 @@ hablar de las diferentes fuentes. comparar cualitativa y cuantitativa mente.. de
 	
 
 \section{EEG based Recognition Models}
+\label{methods}
+	
+Based on the work of Jenke et al.\cite{jenke2014feature}, where a comprehensive survey on 
+the features and models for emotion classification is presented, we performed a selection 
+of the most representative in terms of the treatment of the data. These methods heavily rely on
+manually generated features, which basically represents the stat of the art in the field.\cite{}
+We provide a detailed description of the steps involved and the replication efforts we carried out.
+
+Additionally, we provide the  an alternative based on ...
+	
 	
 \subsection{Takahashi method (2004)}	
 
@@ -264,6 +290,12 @@ Since Murugappan is an active actor in the emotion recognition field, turns to b
 
 \subsection{Convolutional Neural Networks}
 
+The recent renaissance in Artificial Neural Network research through the so-called \emph{deep learning}, has led us explore the use of 
+these sets of techniques for EEG-based emotion recognition.
+
+ 
+\cite{bengio2013representation}
+
 \cite{lecun1995convolutional}
 \cite{zheng2014time}
 \cite{stober2014using}
@@ -271,6 +303,7 @@ Since Murugappan is an active actor in the emotion recognition field, turns to b
 \cite{xing2010brief}
 
 \section{Empirical Study}
+\label{study}
 
 \subsection{How to compare} 
 
@@ -282,13 +315,14 @@ Since Murugappan is an active actor in the emotion recognition field, turns to b
 
 
 \section{Discussion}
+\label{discussion}
 
 \subsection{threats to validity}
 
-\section{Related Work}
+%\section{Related Work}
 
 \section{Conclusions}
-
+\label{conclusion}
 
 %
 % The following two commands are all you need in the

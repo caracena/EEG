@@ -4,45 +4,45 @@ The top-level auxiliary file: sig-alternate.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
 Warning--I didn't find a database entry for "Murugappan2010Classification"
-You've used 9 entries,
+You've used 11 entries,
             2118 wiz_defined-function locations,
-            556 strings with 5685 characters,
-and the built_in function-call counts, 4106 in all, are:
-= -- 389
-> -- 231
+            570 strings with 6041 characters,
+and the built_in function-call counts, 4854 in all, are:
+= -- 465
+> -- 267
 < -- 5
-+ -- 93
-- -- 82
-* -- 305
-:= -- 653
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 68
++ -- 107
+- -- 94
+* -- 369
+:= -- 779
+add.period$ -- 34
+call.type$ -- 11
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 154
-empty$ -- 295
-format.name$ -- 82
-if$ -- 871
+cite$ -- 11
+duplicate$ -- 176
+empty$ -- 351
+format.name$ -- 94
+if$ -- 1021
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 9
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 77
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 85
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 69
 quote$ -- 0
-skip$ -- 121
+skip$ -- 134
 stack$ -- 0
-substring$ -- 251
-swap$ -- 54
+substring$ -- 317
+swap$ -- 56
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 44
 warning$ -- 0
-while$ -- 33
-width$ -- 10
-write$ -- 101
+while$ -- 41
+width$ -- 13
+write$ -- 123
 (There was 1 warning)
