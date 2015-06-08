@@ -249,14 +249,12 @@ unused channels and 1 status channel) at a sample rate of 512Hz. Due to
 \section{EEG based Recognition Models}
 \label{methods}
 	
-<<<<<<< HEAD
-=======
 Based on the work of Jenke et al.\cite{jenke2014feature}, where a 
 comprehensive survey on  the features and models for emotion 
 classification is presented, we performed a selection of the most 
 representative in terms of the treatment of the data. These methods 
 heavily rely on manually generated features, which basically represents 
-the stat of the art in the field \cite{}. We provide a detailed description 
+the state of the art in the field \cite{}. We provide a detailed description 
 of the steps involved and the replication efforts we carried out. 
 
 Additionally, as it is well known that the performance of any 
@@ -266,7 +264,6 @@ we propose a way to adapt a Convolutional Neural
 Network approach to classify emotions, in order to compare  manually
 crafted and automatic feature selection. 
 
->>>>>>> upstream/master
 \subsection{Emotion Recognition from Multi-Modal Bio-Potential Signals (2004)}	
 
 In 2004, Kazuhiko Takahashi published his work called 
@@ -296,8 +293,18 @@ contact the fingers of the subject when a click is done.
 The experiment was applied to 12 subjects (male, native Japanese, age 21-25). This
 procedure aimed to record bio-potentials signals while subjects were stimulated showing commercial 
 films that were broadcasted on TV. The commercial films were previously evaluated by 
-human subjects who did not participate in the experiment. Each films should stimulate a 
-emotion according to the previous evaluation.         
+human subjects who did not participate in the experiment. Each film should stimulate a 
+emotion according to the previous evaluation.
+
+This data collection process shows some similarities with DEAP dataset, however there are some notorious 
+differences. For example, both datasets were generated using audio-visual stimuli, but
+in the case of DEAP dataset the videos are clips from famous songs and this study used commercial films.
+Another difference is the system used for collecting data. In the Takahashi study were
+used three different devices, and in the particular case of EEG just one channel was the
+output. On the other hand, DEAP dataset have 32 channels for EEG and 8 extra channels
+for other purposes, including skin conductance, but excluding pulse. Finally, the amount of
+subjects each study recorded is significantly different, while this study just 
+recorded 12 subject, DEAP dataset includes 32 of them.                
 
 \subsubsection{Feature Extraction}
 
@@ -340,6 +347,12 @@ x^{T} = [\mu_{e}\ \sigma_{e}\ \delta_{e}\ \overline{\delta_{e}}\ \gamma_{e}\ \ov
 \end{equation}
 Where $e$ indicates EEG signals, $p$ pulse, and $s$ skin conductance.
 
+Following the same method of feature extraction for DEAP dataset, 
+we could obtain a similar feature vector, however as we mentioned before, 
+features related with pulse could not be added. As a result we generate 
+a feature vector with 192 columns related to EEG (32 channel x 6 statistical 
+features) plus 6 columns related to skin conductance.
+
 \subsubsection{Emotion Recognition method}
 
 This study used two algorithms to classify emotions given bio-potentials signals.
@@ -354,10 +367,22 @@ To evaluate the results a leave-one-out cross-validation method was carried out.
 For the SVM method with 5 emotions the results was 41.7\% and for 3 emotions was 66.7\%.
 In the case of ANN method, for 5 emotions the results was 31.7\% and for 3 emotions was
 63.9\%.   
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/master
+To build a similar process using DEAP dataset, we used A SVM algorithm using a
+one-vs-all method and a Gaussian function is used as a kernel function. 
+
+\subsubsection{Related Work}
+
+As this work is one of the first in using statistical variables from 
+bio-potentials signals over machine learning algorithms, there are other works
+that have tried to replicated it. 
+
+Wang et. al. in \cite{wang2011} made a similar experiment
+and used the same statistical features for the analysis, but also 
+added frequency domain features such as Fast Fourier Transform. His
+results are better comparing when frequency domain features are not used.
+
+Liu et. al. in \cite{liu2013}
 
 \subsection{Murugappan method (2010)}	
 
