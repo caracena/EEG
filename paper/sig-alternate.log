@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  7 JUN 2015 18:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  8 JUN 2015 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,58 +391,82 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 92.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (8.58191pt too wide) in paragraph at lines 177--184
+
+LaTeX Warning: Reference `methods' on page \thepage  undefined on input line 16
+7.
+
+
+LaTeX Warning: Reference `study' on page \thepage  undefined on input line 168.
+
+
+
+LaTeX Warning: Reference `discussion' on page \thepage  undefined on input line
+ 170.
+
+
+LaTeX Warning: Reference `conclusion' on page \thepage  undefined on input line
+ 171.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Overfull \hbox (8.58191pt too wide) in paragraph at lines 231--238
 \T1/aer/m/it/9 RE-MARKS ON EMO-TION RECOG-NI-TION FROM MULTI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
-[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
 
 LaTeX Warning: Citation `Murugappan2010Classification' on page \thepage  undefi
-ned on input line 207.
+ned on input line 261.
 
-(./sig-alternate.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 256.
+(./sig-alternate.bblpdfTeX warning (ext4): destination with the same identifier
+ (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 \bibitem{zheng2014time}
+                             [2])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.256 \end{document}
-                     [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 256.
+l.310 \end{document}
+                     [3
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
  (./sig-alternate.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 256.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 256.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package rerunfilecheck Info: File `sig-alternate.out' has not changed.
+(rerunfilecheck)             Checksum: 8D2731E3AFAB09C7B7686E120696928A;1063.
 
 
-Package rerunfilecheck Warning: File `sig-alternate.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `sig-alternate.out':
-(rerunfilecheck)             Before: 1CF8D362B4AE6C471F89394CD03AF0B3;926
-(rerunfilecheck)             After:  8D2731E3AFAB09C7B7686E120696928A;1063.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 256.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 6338 strings out of 493315
- 89583 string characters out of 6137905
- 178938 words of memory out of 5000000
- 9663 multiletter control sequences out of 15000+600000
+ 6345 strings out of 493315
+ 89661 string characters out of 6137905
+ 180973 words of memory out of 5000000
+ 9670 multiletter control sequences out of 15000+600000
  49511 words of font info for 66 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,10n,29p,558b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,29p,558b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
@@ -460,10 +484,10 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on sig-alternate.pdf (2 pages, 175492 bytes).
+Output written on sig-alternate.pdf (3 pages, 177030 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 193 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  37 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

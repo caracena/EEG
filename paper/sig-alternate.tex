@@ -90,7 +90,7 @@ some people
 
 \maketitle
 \begin{abstract}
-some abstract
+\vspace{6cm}
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -101,31 +101,77 @@ some abstract
 \keywords{EEG, Machine Learning, Emotion Recognition}
 
 \section{Introduction}
-Emotion is critical aspect of the human behavior that plays a  significant role in  activities 
-such as communication and learning.  Historically, researchers have focused on psycho physiological variables, such as posture, language (voice intonation) , facial expression and gestures to identify and classify emotions and relate them to behavior or decision making processes.
-The use of electroencephalography (EEG) to study the emotion recognition  has allowed the 
-support of disciplines such as Human Computer Interaction (HCI) and Brain Computer Interfaces (BCI). In this context, the vision proposed is that in the future, machines should have the ability to identify the emotional state of humans in order to provide an effective assistance. This could represent a relevant advance in fields such as health care and education.
+Emotion is critical aspect of the human behavior that plays 
+a  significant role in  activities such as communication and 
+learning.  Historically, researchers have focused on psycho 
+physiological variables, such as posture, language 
+(voice intonation), facial expression and gestures to identify 
+and classify emotions and relate them to behavior patterns 
+ or decision making processes.
+The use of electroencephalography (EEG) to study the 
+emotion recognition  has allowed the 
+support of disciplines such as Human Computer Interaction 
+(HCI) and Brain Computer Interfaces (BCI). In this context, 
+the vision proposed is that in the future, machines should 
+have the ability to identify the emotional state of humans 
+in order to provide an effective assistance. This could 
+represent a relevant advance in fields such as health care 
+and education.
 
-EEG-based emotion recognition usually follows a sequence of steps, such as  stimuli selection, feature selection and engineering, classification and evaluation. Literature reports a high 
-level of heterogeneity on each of these steps, given the inherent
-richness of the data (usually captured through a sophisticated configuration of electrodes) , the multimodality of the stimuli and the wide range of analytical tools.  Although this could be seen as a beneficial element, the recent increment in proposed approaches makes it difficult to perform a reliable 
-comparison to assess the real impact , applicability  and level of generalization that the current studies.  Our vision is that, based on the collaborative work with other members of the community, in the future it will be possible to have a solid benchmark that could increase the performance and pace of the research in this area, similarly as benchmarks such as  \cite{ILSVRC15} and \cite{Judd_2012} have boosted the progress in the areas of image recognition and visual saliency, respectively. 
+EEG-based emotion recognition usually follows a sequence 
+of steps, such as  stimuli selection, feature selection and 
+engineering, classification and evaluation. Literature reports 
+a high level of heterogeneity on each of these steps, given 
+the inherent richness of the data (usually captured through 
+a sophisticated configuration of electrodes) , the multimodality 
+of the stimuli and the wide range of analytical tools. Although 
+this could be seen as a beneficial element, the recent increment
+ in proposed approaches makes it difficult to perform a reliable 
+comparison to assess the real impact , applicability  and level 
+of generalization that the current studies.  Our vision is that, 
+based on the collaborative work with other members of the 
+community, in the future it will be possible to have a solid 
+benchmark that could increase the performance and pace 
+of the research in this area, similarly as benchmarks such 
+as  \cite{ILSVRC15} and \cite{Judd_2012} have boosted 
+the progress in the areas of image recognition and visual 
+saliency, respectively. 
 
-In this paper, our  goal is to firstly  study the quality of the available datasets for EEG-based recognition, in terms of their level of generalization. After choosing one, select the current state of the art  in terms of feature extraction and try to replicate the their results keeping  in mind the unification as a primary goal. 
-Secondly, after setting up a base line based on previous work, we explored the use of a new paradigm based on Representation Learning: the use of Convolutional Neural Networks (CNN) for  EEG-based emotion recognition.  To the best of our knowledge, this is first time this methodology is used for this purpose.
+In this paper, our  goal is to firstly  study the quality of 
+the available datasets for EEG-based recognition, in 
+terms of their level of generalization. After choosing 
+one, select the current state of the art  in terms of feature
+ extraction and try to replicate the their results keeping  
+ in mind the unification as a primary goal. 
 
-We performed an empirical study, using the evaluation framework proposed. our main findings are....
+After setting up a baseline based on the study of related 
+work, we explored the use of a new paradigm  based on 
+Representation Learning: the use of Convolutional Neural 
+Networks (CNN) for  EEG-based emotion recognition.  Our main
+motivation is try to generate an alternative to the feature 
+engineering process present in EEG-based emotion recognition, 
+which usually turns out to be difficult and  excessively laborious. In 
+that sense, we are interested in analyzing if an automatic feature 
+extraction could be competitive compared to hand crafted 
+features. Our main hypothesis is that  the ability of CNN to generate 
+hierarchical representations of the features could lead to an 
+effective understanding of the relationship between signal patterns 
+and the valence of emotions.
 
+We performed an initial empirical study to compare the collected 
+emotion classification methods based on an unified way.  Our results 
+show that...
+
+The rest of the paper is structured as follows. Section \ref{data} explores 
+the publicly  available EEG datasets for emotion recognition.  Section 
+\ref{methods} describes what we consider the most representative methods
+for emotion classification, along with a  deep learning alternative. Section \ref{study}
+sets a formal way to unify and compare the performance of the methods. 
+Section \ref{discussion} discusses the results and the limitations of the analysis. Finally,
+Section \ref{conclusion} outlines the conclusions and the future work. 
 
 \section{Data Sources}
-
-We performed a sistematic review of the related literature looking for available EEG datasets for emotion recognition. In this section we analyze them qualitatively and quantitatively, highlighting their overall quality possible limitations. 
-
-\subsection{DEAP}
-editar la parte de claudio
-
-\subsection{no me acuerdo el nombre}
-
+\label{data}
 
 hablar de las diferentes fuentes. comparar cualitativa y cuantitativa mente.. decir por que deap.
 
@@ -178,13 +224,10 @@ hablar de las diferentes fuentes. comparar cualitativa y cuantitativa mente.. de
 %\end{table}       	
 	
 
-\section{EEG based Classification Models}
-
-In this section , we provide a description of the most representative EEG based emotion classification models taking in account their assumptions, features extraction methods and ...
-
+\section{EEG based Recognition Models}
 	
 \subsection{Takahashi method (2004)}	
-.... titulo.. statistic metric based feature generation..
+
 In 2004, Kazuhiko Takahashi published his work called 
 \textit{REMARKS ON EMOTION RECOGNITION FROM MULTI-MODAL BIO-POTENTIAL SIGNALS}~\cite{takahashi2004}. This 
 research aimed to achieve a classification of 5 emotions (joy, anger, sadness, fear, and relax)
@@ -212,7 +255,7 @@ To characterize the data this work used the next statistical features:
 
 
 \subsection{Murugappan method (2010)}	
-Editar...........
+
 Murugappan et al. have quite an interesting story related to the emotion assessment through EEG analysis. Starting from 2008, several studies could be found in literature corresponding to this author, using different combinations of features, EEG channels and algorithms in order to classify discrete emotions such as disgust, happy, surprise, sad and anger.(CITAR los paper de muru).
 
 For the present benchmark, we are centered in one of the mentioned Murugappan's works, where an experiment was conducted for collecting EEG data of 20 subjects, for the classification of five emotions, namely disgust, happy, surprise, fear and neutral. A wavelet-based approach was performed, three different features were proposed for the analysis and two classifiers were used, obtaining a maximimum average classification rate of 83.26\% with KNN and 75,21\% with LDA \cite{Murugappan2010Classification}.
@@ -244,7 +287,7 @@ Since Murugappan is an active actor in the emotion recognition field, turns to b
 
 \section{Related Work}
 
-\section{Conclusions and Future work}
+\section{Conclusions}
 
 
 %
