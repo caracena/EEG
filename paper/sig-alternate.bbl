@@ -1,4 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bengio2013representation}
+Y.~Bengio, A.~Courville, and P.~Vincent.
+\newblock Representation learning: A review and new perspectives.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 35(8):1798--1828, 2013.
+
+\bibitem{jenke2014feature}
+R.~Jenke, A.~Peer, and M.~Buss.
+\newblock Feature extraction and selection for emotion recognition from eeg.
+\newblock {\em Affective Computing, IEEE Transactions on}, 5(3):327--339, 2014.
 
 \bibitem{Judd_2012}
 T.~Judd, F.~Durand, and A.~Torralba.
