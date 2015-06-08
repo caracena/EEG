@@ -264,10 +264,10 @@ we propose a way to adapt a Convolutional Neural
 Network approach to classify emotions, in order to compare  manually
 crafted and automatic feature selection. 
 
-\subsection{Takahashi method (2004)}	
+\subsection{Emotion Recognition from Multi-Modal Bio-Potential Signals (2004)}	
 
 In 2004, Kazuhiko Takahashi published his work called 
-\textit{REMARKS ON EMOTION RECOGNITION FROM MULTI-MODAL BIO-POTENTIAL SIGNALS}~\cite{takahashi2004}. This 
+\textit{Remarks on Emotion Recognition from Multi-Modal Bio-Potential Signals}~\cite{takahashi2004}. This 
 research aimed to achieve a classification of 5 emotions (joy, anger, sadness, fear, and relax)
 using multi-modal biopotential signals such as brain signals, pulse and skin conductance. He
  did experiments in order to collect data and then make a posterior analysis using algorithms
@@ -279,18 +279,78 @@ This work is one of the first that tries to use machine learning algorithms
  how this field has been growing over last decade, this research is a good
  candidate to start the list of included works in the benchmark.  
 
+\subsubsection{Data Collection}
+
+The data collection was done through an experiment using 3 different devices for each kind of signal. 
+First, to measure the brain signals it was used a simple brain-computer interface
+(The Cyberlink Interface, Brain Actuated Technologies, Inc.). This device includes 
+three dry electrodes that have to be located on subject's forehead. Second, to record 
+pulse signal was used a pulseoxymeter, composed by a sensor clip and an amplifier, that 
+was located on subject's earlobe. Third, a skin conductance meter composed by
+two electrodes and an amplifier. This device was located on a mouse in order to 
+contact the fingers of the subject when a click is done. 
+
+The experiment was applied to 12 subjects (male, native Japanese, age 21-25). This
+procedure aimed to record bio-potentials signals while subjects were stimulated showing commercial 
+films that were broadcasted on TV. The commercial films were previously evaluated by 
+human subjects who did not participate in the experiment. Each films should stimulate a 
+emotion according to the previous evaluation.         
+
 \subsubsection{Feature Extraction}
 
 To characterize the data this work used the next statistical features:
 \begin{enumerate}
-\item Mean ($\mu_{X}$)
-\item Standard Deviation ($\sigma_{X}$)
-\item Mean of absolute differences \\ \\ $\delta_{X} = \frac{1}{N-1} \sum^{N-1}_{n=1}|X(n+1)-X(n)|$
-\item Mean of normalized absolute differences ($\overline{\delta_{X}} = \frac{\delta_{X}}{\sigma_{X}}$)
-\item Mean of absolute second differences \\ \\ $\gamma_{X} = \frac{1}{N-2} \sum^{N-2}_{n=1}|X(n+2)-X(n)|$
-\item Mean of normalized absolute second differences \\ ($\overline{\gamma_{X}} = \frac{\gamma_{X}}{\sigma_{X}}$)
+\item Mean 
+\begin{equation}
+\mu_{X} = \frac{1}{N}\sum^{N}_{n=1} X(n)
+\end{equation}
+\item Standard Deviation 
+\begin{equation}
+\sigma_{X} = \sqrt{ \frac{1}{N}\sum^{N}_{n=1} (X(n)-\mu_{X})^{2} }
+\end{equation}
+\item Mean of absolute differences 
+\begin{equation}
+\delta_{X} = \frac{1}{N-1} \sum^{N-1}_{n=1}|X(n+1)-X(n)|
+\end{equation}
+\item Mean of normalized absolute differences
+\begin{equation}
+\overline{\delta_{X}} = \frac{\delta_{X}}{\sigma_{X}}
+\end{equation}
+\item Mean of absolute second differences  
+\begin{equation}
+\gamma_{X} = \frac{1}{N-2} \sum^{N-2}_{n=1}|X(n+2)-X(n)|
+\end{equation}
+\item Mean of normalized absolute second differences
+\begin{equation}
+\overline{\gamma_{X}} = \frac{\gamma_{X}}{\sigma_{X}}
+\end{equation}
 \end{enumerate}  
 
+Once these features were obtained, a feature vector was created according the following 
+expression:
+\begin{equation}
+\begin{split}
+x^{T} = [\mu_{e}\ \sigma_{e}\ \delta_{e}\ \overline{\delta_{e}}\ \gamma_{e}\ \overline{\gamma_{e}}\ 
+\mu_{p}\ \sigma_{p}\ \delta_{p}\ \overline{\delta_{p}}\ \gamma_{p}\ \overline{\gamma_{p}}\ \\
+\mu_{s}\ \sigma_{s}\ \delta_{s}\ \overline{\delta_{s}}\ \gamma_{s}\ \overline{\gamma_{s}}\ ] 
+\end{split}
+\end{equation}
+Where $e$ indicates EEG signals, $p$ pulse, and $s$ skin conductance.
+
+\subsubsection{Emotion Recognition method}
+
+This study used two algorithms to classify emotions given bio-potentials signals.
+First, a Support Vector Machine (SVM) using a multiclass classification is designed under 
+a one-vs-all method, in other words, for each emotion was created a SVM, and the best
+classification results indicated the corresponding class. A Gaussian function was used as a kernel function.
+Second, an Artificial Neural Network using three layers and trained by Levenberg-Marquart method.
+A sigmoid function was used as an activation function of the nodes. As same as the first algorithm,
+for each emotion a ANN was created using a similar process to classify.
+
+To evaluate the results a leave-one-out cross-validation method was carried out. 
+For the SVM method with 5 emotions the results was 41.7\% and for 3 emotions was 66.7\%.
+In the case of ANN method, for 5 emotions the results was 31.7\% and for 3 emotions was
+63.9\%.   
 
 \subsection{Murugappan method (2010)}	
 
