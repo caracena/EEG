@@ -103,31 +103,31 @@ some people
 \section{Introduction}
 Emotion is critical aspect of the human behavior that plays 
 a  significant role in  activities such as communication and 
-learning.  Historically, researchers have focused on psycho 
+learning \cite{}.  Historically, researchers have focused on psycho 
 physiological variables, such as posture, language 
 (voice intonation), facial expression and gestures to identify 
 and classify emotions and relate them to behavior patterns 
- or decision making processes.
+ or decision making processes \cite{}.
 The use of electroencephalography (EEG) to study the 
 emotion recognition  has allowed the 
 support of disciplines such as Human Computer Interaction 
-(HCI) and Brain Computer Interfaces (BCI). In this context, 
+(HCI) and Brain Computer Interfaces (BCI) \cite{}. In this context, 
 the vision proposed is that in the future, machines should 
 have the ability to identify the emotional state of humans 
 in order to provide an effective assistance. This could 
 represent a relevant advance in fields such as health care 
-and education.
+and education \cite{}.
 
 EEG-based emotion recognition usually follows a sequence 
 of steps, such as  stimuli selection, feature selection and 
-engineering, classification and evaluation. Literature reports 
+engineering, classification and evaluation \cite{}. Literature reports 
 a high level of heterogeneity on each of these steps, given 
 the inherent richness of the data (usually captured through 
-a sophisticated configuration of electrodes) , the multimodality 
+a sophisticated configuration of electrodes), the multimodality 
 of the stimuli and the wide range of analytical tools. Although 
 this could be seen as a beneficial element, the recent increment
  in proposed approaches makes it difficult to perform a reliable 
-comparison to assess the real impact , applicability  and level 
+comparison to assess the real impact, applicability  and level 
 of generalization that the current studies.  Our vision is that, 
 based on the collaborative work with other members of the 
 community, in the future it will be possible to have a solid 
@@ -142,8 +142,10 @@ the available datasets for EEG-based recognition, in
 terms of their level of generalization. After choosing 
 one, select the current state of the art  in terms of feature
  extraction and try to replicate the their results keeping  
- in mind the unification as a primary goal. 
-
+ in mind the unification as a primary goal. Additionally, a 
+ evaluation framework is proposed, in order to formalize 
+ and normalize the results.  
+ 
 After setting up a baseline based on the study of related 
 work, we explored the use of a new paradigm  based on 
 Representation Learning: the use of Convolutional Neural 
@@ -160,20 +162,22 @@ and the valence of emotions.
 
 We performed an initial empirical study to compare the collected 
 emotion classification methods based on an unified way.  Our results 
-show that...
+show that ... ******* mostrar resultados y coclusiones...
 
 The rest of the paper is structured as follows. Section \ref{data} 
-explores the publicly  available EEG datasets for emotion recognition.  Section 
-\ref{methods} describes what we consider the most representative methods
-for emotion classification, along with a  deep learning alternative. Section \ref{study}
-sets a formal way to unify and compare the performance of the methods. 
-Section \ref{discussion} discusses the results and the limitations of the analysis. Finally,
-Section \ref{conclusion} outlines the conclusions and the future work. 
+explores the publicly  available EEG datasets for emotion 
+recognition.  Section  \ref{methods} describes what we consider 
+the most representative methods for emotion classification, along 
+with a  deep learning alternative. Section \ref{study}
+sets a formal way to unify and compare the performance of the 
+methods. Section \ref{discussion} discusses the results and the 
+limitations of the analysis. Finally, Section \ref{conclusion} outlines 
+the conclusions and the future work. 
 
 \section{Data Sources Analysis}
 \label{data}
 
-Literature shows several attempts  to provide  robust datasets for EEG based 
+Literature shows several attempts  to provide robust datasets for EEG based 
 emotion recognition. These approaches differ in many factors, such as  nature 
 of the stimuli and number and type of participants. In this section,  a detailed 
 summary is provided, followed by a qualitative and quantitative
@@ -193,6 +197,8 @@ unused channels and 1 status channel) at a sample rate of 512Hz. Due to
  different revision of the hardware, there are some minor differences in the 
  format, mainly regarding to the order of the  channels.
 
+
+\subsection{Otros...}
 %For our research we used the famous dataset for the analysis of human affective states called
  %Database for Emotion Analysis using Physiological Signals (DEAP)~\cite{deap2011}. This
 % dataset contains electroencephalogram and peripheral physiological signals of 32 healthy
@@ -243,15 +249,21 @@ unused channels and 1 status channel) at a sample rate of 512Hz. Due to
 \section{EEG based Recognition Models}
 \label{methods}
 	
-Based on the work of Jenke et al.\cite{jenke2014feature}, where a comprehensive survey on 
-the features and models for emotion classification is presented, we performed a selection 
-of the most representative in terms of the treatment of the data. These methods heavily rely on
-manually generated features, which basically represents the stat of the art in the field.\cite{}
-We provide a detailed description of the steps involved and the replication efforts we carried out.
+Based on the work of Jenke et al.\cite{jenke2014feature}, where a 
+comprehensive survey on  the features and models for emotion 
+classification is presented, we performed a selection of the most 
+representative in terms of the treatment of the data. These methods 
+heavily rely on manually generated features, which basically represents 
+the stat of the art in the field \cite{}. We provide a detailed description 
+of the steps involved and the replication efforts we carried out. 
 
-Additionally, we provide the  an alternative based on ...
-	
-	
+Additionally, as it is well known that the performance of any 
+classification method depends on the representation of the data 
+\cite{bengio2013representation}, 
+we propose a way to adapt a Convolutional Neural 
+Network approach to classify emotions, in order to compare  manually
+crafted and automatic feature selection. 
+
 \subsection{Takahashi method (2004)}	
 
 In 2004, Kazuhiko Takahashi published his work called 
@@ -290,11 +302,12 @@ Since Murugappan is an active actor in the emotion recognition field, turns to b
 
 \subsection{Convolutional Neural Networks}
 
-The recent renaissance in Artificial Neural Network research through the so-called \emph{deep learning}, has led us explore the use of 
-these sets of techniques for EEG-based emotion recognition.
-
- 
-\cite{bengio2013representation}
+The recent renaissance in Artificial Neural Network research 
+through the so-called \emph{deep learning}, has led us explore 
+the use of these sets of techniques for EEG-based emotion 
+recognition. in that sense, we interested in testing if the ability
+to automatically learn  hierarchical feature representations can
+improve the classification accuracy in this domain. 
 
 \cite{lecun1995convolutional}
 \cite{zheng2014time}
@@ -305,19 +318,53 @@ these sets of techniques for EEG-based emotion recognition.
 \section{Empirical Study}
 \label{study}
 
-\subsection{How to compare} 
+In this section, we present an  exploratory 
+analysis of the selected approaches based on a standarized
+evaluation process. Our main goal is to provide the basis
+of a initial benchmark that eventually could be used in future
+studies.
 
-\subsection{metric} 
+\subsection{ Evaluation Design} 
 
-\subsection{evaluation Steps}
 
-\subsection{remarks}
+- leave 1 out ...
 
+- 3 clases
+ - 
+- una clase por trial por  usuario
+
+-confusion matrix 
+
+\subsection{ Results and Analysis}
+
+Given 
+
+
+
+\subsection{Remarks}
 
 \section{Discussion}
 \label{discussion}
 
-\subsection{threats to validity}
+\subsection{Threats to Validity}
+
+The proposed  study has a main goal the formalization
+of the analysis into a unified analysis framework 
+that could allow researchers to compare and
+visualize and improvements in more clear way. 
+As this is quite a challenging goals, there are several
+threats to the validity of the results. 
+
+\textbf{Internal validity: }  ****hablar sobre la metrica
+
+\textbf{External validity: } ****hablar que faltan otros metodos
+
+\textbf{ Construct validity: } 
+
+
+\subsection{Feasibility}
+
+
 
 %\section{Related Work}
 
