@@ -30,6 +30,12 @@ Y.~LeCun and Y.~Bengio.
 \newblock {\em The handbook of brain theory and neural networks}, 3361:310,
   1995.
 
+\bibitem{liu2013}
+Y.~Liu and O.~Sourina.
+\newblock Eeg databases for emotion recognition.
+\newblock In {\em Cyberworlds (CW), 2013 International Conference on}, pages
+  302--309, Oct 2013.
+
 \bibitem{ILSVRC15}
 O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
   A.~Karpathy, A.~Khosla, M.~Bernstein, A.~C. Berg, and L.~Fei-Fei.
@@ -55,6 +61,14 @@ K.~Takahashi.
   signals.
 \newblock In {\em Industrial Technology, 2004. IEEE ICIT '04. 2004 IEEE
   International Conference on}, volume~3, pages 1138--1143 Vol. 3, Dec 2004.
+
+\bibitem{wang2011}
+X.-W. Wang, D.~Nie, and B.-L. Lu.
+\newblock Eeg-based emotion recognition using frequency domain features and
+  support vector machines.
+\newblock In B.-L. Lu, L.~Zhang, and J.~Kwok, editors, {\em Neural Information
+  Processing}, volume 7062 of {\em Lecture Notes in Computer Science}, pages
+  734--743. Springer Berlin Heidelberg, 2011.
 
 \bibitem{xing2010brief}
 Z.~Xing, J.~Pei, and E.~Keogh.

@@ -124,9 +124,9 @@ engineering, classification and evaluation \cite{}. Literature reports
 a high level of heterogeneity on each of these steps, given 
 the inherent richness of the data (usually captured through 
 a sophisticated configuration of electrodes), the multimodality 
-of the stimuli and the wide range of analytical tools. Although 
+of the stimuli and the wide range of analysis tools. Although 
 this could be seen as a beneficial element, the recent increment
- in proposed approaches makes it difficult to perform a reliable 
+ in reported approaches makes it difficult to perform a reliable 
 comparison to assess the real impact, applicability  and level 
 of generalization that the current studies.  Our vision is that, 
 based on the collaborative work with other members of the 
@@ -264,85 +264,72 @@ we propose a way to adapt a Convolutional Neural
 Network approach to classify emotions, in order to compare  manually
 crafted and automatic feature selection. 
 
-\subsection{Emotion Recognition from Multi-Modal Bio-Potential Signals (2004)}	
+\subsection{ Multi-Modal Bio-Potential Signals}	
 
-In 2004, Kazuhiko Takahashi published his work called 
-\textit{Remarks on Emotion Recognition from Multi-Modal Bio-Potential Signals}~\cite{takahashi2004}. This 
-research aimed to achieve a classification of 5 emotions (joy, anger, sadness, fear, and relax)
-using multi-modal biopotential signals such as brain signals, pulse and skin conductance. He
- did experiments in order to collect data and then make a posterior analysis using algorithms
- like Support Vector Machine and Artificial Neural Networks. His results reached a precision of
- 41.7\% for 5 emotions and 66.7\% for 3 emotions. 
-
-This work is one of the first that tries to use machine learning algorithms
- over biological signals features for emotion recognition. In order to see
- how this field has been growing over last decade, this research is a good
- candidate to start the list of included works in the benchmark.  
-
+In \cite{takahashi2004}, Takahashi et al. proposed a  method for 
+ classification of 5 emotions (joy, anger, sadness, fear, and relax)
+using multi-modal biopotential signals such as brain activity, pulse and
+ skin conductance. The classification is based on SVM and NN, reaching 
+ accuracies of  41.7\%  66.7\% for 5 and 3 emotions, respectively. 
+ 
+As this  study represents one of the first attempts to implement 
+machine learning methods on biological signal features for emotion
+ recognition, we selected as a baseline for our empirical study. 
+ 
 \subsubsection{Data Collection}
 
-The data collection was done through an experiment using 3 different devices for each kind of signal. 
-First, to measure the brain signals it was used a simple brain-computer interface
-(The Cyberlink Interface, Brain Actuated Technologies, Inc.). This device includes 
-three dry electrodes that have to be located on subject's forehead. Second, to record 
-pulse signal was used a pulseoxymeter, composed by a sensor clip and an amplifier, that 
-was located on subject's earlobe. Third, a skin conductance meter composed by
-two electrodes and an amplifier. This device was located on a mouse in order to 
-contact the fingers of the subject when a click is done. 
+The data collection was performed through a controlled 
+experiment using 3 different devices for each type of signal. 
+Firstly,  a  brain-computer interface was used for to measure 
+the brain activity. This device included 
+three dry electrodes that have to be located on the subject's 
+forehead. Secondly, a pulseoxymeter was used to capture 
+pulse signal. It consists of a sensor clip and an amplifier, which 
+is located  on the  subject's earlobe. Lastly, a skin 
+conductance meter composed by two electrodes and an amplifier. 
+%This device was located on a mouse in order to 
+%contact the fingers of the subject when a click is done. 
 
-The experiment was applied to 12 subjects (male, native Japanese, age 21-25). This
-procedure aimed to record bio-potentials signals while subjects were stimulated showing commercial 
-films that were broadcasted on TV. The commercial films were previously evaluated by 
-human subjects who did not participate in the experiment. Each film should stimulate a 
-emotion according to the previous evaluation.
+The experiment  was applied to 12  male subjects and  
+consisted of stimulation based  on commercial 
+films presented on a screen. These films were previously 
+evaluated and manually labeled. This methodology resembles
+partially the experimental setting performed for DEAP, such
+as the use of video, however, the magnitude and complexity of
+the data captured is drastically lower.
 
-This data collection process shows some similarities with DEAP dataset, however there are some notorious 
-differences. For example, both datasets were generated using audio-visual stimuli, but
-in the case of DEAP dataset the videos are clips from famous songs and this study used commercial films.
-Another difference is the system used for collecting data. In the Takahashi study were
-used three different devices, and in the particular case of EEG just one channel was the
-output. On the other hand, DEAP dataset have 32 channels for EEG and 8 extra channels
-for other purposes, including skin conductance, but excluding pulse. Finally, the amount of
-subjects each study recorded is significantly different, while this study just 
-recorded 12 subject, DEAP dataset includes 32 of them.                
+%This data collection process shows some similarities with 
+%DEAP dataset, however there are some notorious 
+%differences. For example, both datasets were generated 
+%using audio-visual stimuli, but in the case of DEAP 
+%dataset the videos are clips from famous songs and this study used commercial films.
+%Another difference is the system used for collecting data. In the Takahashi study were
+%used three different devices, and in the particular case of EEG just one channel was the
+%output. On the other hand, DEAP dataset have 32 channels for EEG and 8 extra channels
+%for other purposes, including skin conductance, but excluding pulse. Finally, the amount of
+%subjects each study recorded is significantly different, while this study just 
+%recorded 12 subject, DEAP dataset includes 32 of them.                
 
 \subsubsection{Feature Extraction}
 
 To characterize the data this work used the next statistical features:
 \begin{enumerate}
-\item Mean 
-\begin{equation}
-\mu_{X} = \frac{1}{N}\sum^{N}_{n=1} X(n)
-\end{equation}
-\item Standard Deviation 
-\begin{equation}
-\sigma_{X} = \sqrt{ \frac{1}{N}\sum^{N}_{n=1} (X(n)-\mu_{X})^{2} }
-\end{equation}
-\item Mean of absolute differences 
-\begin{equation}
-\delta_{X} = \frac{1}{N-1} \sum^{N-1}_{n=1}|X(n+1)-X(n)|
-\end{equation}
-\item Mean of normalized absolute differences
-\begin{equation}
-\overline{\delta_{X}} = \frac{\delta_{X}}{\sigma_{X}}
-\end{equation}
-\item Mean of absolute second differences  
-\begin{equation}
-\gamma_{X} = \frac{1}{N-2} \sum^{N-2}_{n=1}|X(n+2)-X(n)|
-\end{equation}
-\item Mean of normalized absolute second differences
-\begin{equation}
-\overline{\gamma_{X}} = \frac{\gamma_{X}}{\sigma_{X}}
-\end{equation}
+\item Mean:  $\mu_{X} = \frac{1}{N}\sum^{N}_{n=1} X(n)$
+\item Standard Deviation:  $\sigma_{X} = \sqrt{ \frac{1}{N}\sum^{N}_{n=1} (X(n)-\mu_{X})^{2} }$
+\item Mean of absolute differences:  $\delta_{X} = \frac{1}{N-1} \sum^{N-1}_{n=1}|X(n+1)-X(n)|$
+\item Mean of normalized absolute differences: $\overline{\delta_{X}} = \frac{\delta_{X}}{\sigma_{X}}$
+\item Mean of absolute second differences:  $\gamma_{X} = \frac{1}{N-2} \\
+ \sum^{N-2}_{n=1}|X(n+2)-X(n)|$
+\item Mean of normalized absolute second differences: $\overline{\gamma_{X}} = \frac{\gamma_{X}}{\sigma_{X}}$
 \end{enumerate}  
 
 Once these features were obtained, a feature vector was created according the following 
 expression:
 \begin{equation}
 \begin{split}
-x^{T} = [\mu_{e}\ \sigma_{e}\ \delta_{e}\ \overline{\delta_{e}}\ \gamma_{e}\ \overline{\gamma_{e}}\ 
-\mu_{p}\ \sigma_{p}\ \delta_{p}\ \overline{\delta_{p}}\ \gamma_{p}\ \overline{\gamma_{p}}\ \\
-\mu_{s}\ \sigma_{s}\ \delta_{s}\ \overline{\delta_{s}}\ \gamma_{s}\ \overline{\gamma_{s}}\ ] 
+x^{T} = [\mu_{e}\ \sigma_{e}\ \delta_{e}\ \overline{\delta_{e}}\ \gamma_{e}\ %\overline{\gamma_{e}}\ 
+\mu_{p}\ \sigma_{p}\ \delta_{p}\ \overline{\delta_{p}}\ \gamma_{p}\ %\overline{\gamma_{p}}\ \\
+\mu_{s}\ \sigma_{s}\ \delta_{s}\ \overline{\delta_{s}}\ \gamma_{s}\ %\overline{\gamma_{s}}\ ] 
 \end{split}
 \end{equation}
 Where $e$ indicates EEG signals, $p$ pulse, and $s$ skin conductance.
@@ -401,9 +388,24 @@ recognition. in that sense, we interested in testing if the ability
 to automatically learn  hierarchical feature representations can
 improve the classification accuracy in this domain. 
 
+As stated in \cite{stober2014using} EEG can be can be modeled 
+just a waveform, using a one
+dimensional representation, or as a frequency spectrum, using 
+two dimensional representation.
+
+\subsection{Architecture}
+
+Filter Layer 
+
+Activation Layer
+ 
+Pooling Layer
+
+
+
 \cite{lecun1995convolutional}
 \cite{zheng2014time}
-\cite{stober2014using}
+
 \cite{stober2014classifying}
 \cite{xing2010brief}
 
@@ -418,14 +420,26 @@ studies.
 
 \subsection{ Evaluation Design} 
 
+The first step is to define a clear way to compare the 
+studied approaches. We are dealing with a multi class classification
+problem, where  each subject performed a defined set of trials. As
+each trial encapsulates the visualization of a video clip in the DEAP 
+repository, we consider
+this level as the most appropriate to evaluate. It allows to perform 
+further analysis across different dimensions, for example, it is possible
+to obtain an aggregated performance score for each  trial (video) across all users. Similarly, it is possible to obtain the average accuracy for one 
+user across all trials.
 
-- leave 1 out ...
+Given the above,  for the specific case of DEAP, it provides 32 subjects, 
+each with 40 instances. Therefore, it is expected as output for any classification method in this study, a  40 x 32 matrix  $O$ in  which each element $o_{ij}$ represents the predicted emotion class associated to the instance $i$ for the user $j$.
+ 
+Another relevant aspect is to choose the representation of the class itself. DEAP provides several  values that can be used to 
+represent the polarity of an emotion . For simplicity, we chose to used 
+the pre-computed valence score  and discretize to three classes, 
+encoding the classes from three equal segments (reported scores
+range from 1 to 9). 
 
-- 3 clases
- - 
-- una clase por trial por  usuario
-
--confusion matrix 
+For the evaluation we adopted the \emph{leave-one-out} cross validation technique (LOOCV).
 
 \subsection{ Results and Analysis}
 
