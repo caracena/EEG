@@ -338,17 +338,32 @@ we propose a way to adapt a Convolutional Neural
 Network approach to classify emotions, in order to compare  
 manually crafted and automatic feature generation. 
 
-\subsection{ Multi-Modal Bio-Potential Signals}	
+\subsection{Statistical features method}	
 
 In \cite{takahashi2004}, Takahashi et al. proposed a  method for 
  classification of 5 emotions (joy, anger, sadness, fear, and relax)
 using multi-modal biopotential signals such as brain activity, pulse and
  skin conductance. The classification is based on SVM and NN, reaching 
- accuracies of  41.7\%  66.7\% for 5 and 3 emotions, respectively. 
+ accuracies of  41.7\% and 66.7\% for 5 and 3 emotions, respectively. 
  
 As this  study represents one of the first attempts to implement 
 machine learning methods on biological signal features for emotion
  recognition, we selected as a baseline for our empirical study. 
+ 
+%As this work is one of the first in using statistical variables from 
+%bio-potentials signals over machine learning algorithms, there are other works
+%that have tried to replicated it. 
+%
+%Wang et. al. in \cite{wang2011} made a similar experiment
+%and used the same statistical features for the analysis, but also 
+%added frequency domain features such as Fast Fourier Transform. His
+%results are better comparing when frequency domain features are not used.
+%
+%Liu et. al. in \cite{liu2013} made their own experiment using the emerging 
+%device EPOC\footnote{https://emotiv.com/epoc.php}. In this research the
+%authors used statistical and fractal dimension features to recognize 
+%emotions from 2 up to 9 classes. As a way of comparison, this study
+%used DEAP dataset reaching promising results. 
  
 \subsubsection{Data Collection}
 
@@ -408,12 +423,6 @@ x^{T} = [\mu_{e}\ \sigma_{e}\ \delta_{e}\ \overline{\delta_{e}}\ \gamma_{e}\ %\o
 \end{equation}
 Where $e$ indicates EEG signals, $p$ pulse, and $s$ skin conductance.
 
-Following the same method of feature extraction for DEAP dataset, 
-we could obtain a similar feature vector, however as we mentioned before, 
-features related with pulse could not be added. As a result we generate 
-a feature vector with 192 columns related to EEG (32 channel x 6 statistical 
-features) plus 6 columns related to skin conductance.
-
 \subsubsection{Emotion Recognition Method}
 
 This study used two algorithms to classify emotions given bio-potentials signals.
@@ -429,36 +438,6 @@ For the SVM method with 5 emotions the results was 41.7\% and for 3 emotions was
 In the case of ANN method, for 5 emotions the results was 31.7\% and for 3 emotions was
 63.9\%.   
 
-To build a similar process using DEAP dataset, we used A SVM algorithm using a
-one-vs-all method and a Gaussian function is used as a kernel function. 
-
-\subsubsection{Replication Steps}
-{\color{red} no se si esta seccion se conecta totalmente, me refiero a los pasos y a
-otros trabajos que se han hecho}
-
-In order to replicate the method used by Takahashi over DEAP dataset the following 
-steps were applied:
-\begin{enumerate}
-\item Calculate statistical features per subject per trial over each channel (198 features).
-\item Once features are obtained, a SVM algorithm was carried out using a configuration 
-as similar as the original method.
-\item Evaluate using a one-leave-out subject method. 
-\end{enumerate}
-
-As this work is one of the first in using statistical variables from 
-bio-potentials signals over machine learning algorithms, there are other works
-that have tried to replicated it. 
-
-Wang et. al. in \cite{wang2011} made a similar experiment
-and used the same statistical features for the analysis, but also 
-added frequency domain features such as Fast Fourier Transform. His
-results are better comparing when frequency domain features are not used.
-
-Liu et. al. in \cite{liu2013} made their own experiment using the emerging 
-device EPOC\footnote{https://emotiv.com/epoc.php}. In this research the
-authors used statistical and fractal dimension features to recognize 
-emotions from 2 up to 9 classes. As a way of comparison, this study
-used DEAP dataset reaching promising results.
 
 %\subsection{Murugappan method (2010)}	
 
@@ -596,8 +575,41 @@ TODO
 We performed the emotion classification task for the three approaches presented
 using the DEAP dataset.
 
+\subsubsection{Statistical features method}	
 
+In order to replicate the method used by Takahashi over DEAP dataset the following 
+steps were applied:
 
+\begin{enumerate}
+
+\item Calculate statistical features per subject per trial over each channel. 
+Following the same method of feature extraction of this method for DEAP dataset, 
+we could obtain a similar feature vector, however as we mentioned before, 
+features related with pulse could not be added. As a result we generate 
+a feature vector with 192 columns related to EEG (32 channel x 6 statistical 
+features) plus 6 columns related to skin conductance.
+
+\item Once features are obtained, a SVM algorithm was carried out using a configuration 
+as similar as the original method. We used A SVM algorithm using a
+one-vs-all method and a Gaussian function is used as a kernel function. 
+
+\item Evaluate using a one-leave-out method. To implement this procedure, we train 
+the SVM algorithm with data from 31 subjects and test with the rest of data.
+An overall average of the testing accuracies is the result for the algorithm.
+
+\end{enumerate}
+ 
+After applied the previous process the accuracy result is 45\%. This result is explain 
+through different factors. First, as we categorized the labels on three classes some of them
+have more elements than others, then SVM tries to classify a specific case in 
+the class with more elements to maximize the results. We could have changed the setting in order to get 
+better results, but this change would be a specific tuning for the DEAP dataset and 
+our goal is to make algorithms as much general as possible. Second, statistical features 
+are little explanatory by themselves and with help from other features can reach
+better classification results. For the same reason, posterior studies try to include 
+features related to frequency domain (Wang et. al. in \cite{wang2011}) or fractal dimension
+(Liu et. al. in \cite{liu2013}). Finally, there are differences between the original study
+and DEAP dataset that clearly lead to different results.
 
 \subsection{Remarks}
 
