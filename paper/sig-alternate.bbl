@@ -36,6 +36,27 @@ Y.~Liu and O.~Sourina.
 \newblock In {\em Cyberworlds (CW), 2013 International Conference on}, pages
   302--309, Oct 2013.
 
+\bibitem{murugappan2009wavelet}
+M.~Murugappan, R.~Nagarajan, and S.~Yaacob.
+\newblock Comparison of different wavelet features from eeg signals for
+  classifying human emotions.
+\newblock In {\em Industrial Electronics Applications, 2009. ISIEA 2009. IEEE
+  Symposium on}, volume~2, pages 836--841, Oct 2009.
+
+\bibitem{murugappan2010classification}
+M.~Murugappan, N.~Ramachandran, Y.~Sazali, et~al.
+\newblock Classification of human emotion from eeg using discrete wavelet
+  transform.
+\newblock {\em Journal of Biomedical Science and Engineering}, 3(04):390, 2010.
+
+\bibitem{murugappan2008time}
+M.~Murugappan, M.~Rizon, R.~Nagarajan, S.~Yaacob, D.~Hazry, and I.~Zunaidi.
+\newblock Time-frequency analysis of eeg signals for human emotion detection.
+\newblock In N.~Abu~Osman, F.~Ibrahim, W.~Wan~Abas, H.~Abdul~Rahman, and H.-N.
+  Ting, editors, {\em 4th Kuala Lumpur International Conference on Biomedical
+  Engineering 2008}, volume~21 of {\em IFMBE Proceedings}, pages 262--265.
+  Springer Berlin Heidelberg, 2008.
+
 \bibitem{ILSVRC15}
 O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
   A.~Karpathy, A.~Khosla, M.~Bernstein, A.~C. Berg, and L.~Fei-Fei.

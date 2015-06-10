@@ -50,7 +50,7 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+\conferenceinfo{BrainKDD}{'15 Sydney, Australia}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
@@ -58,8 +58,7 @@
 %\title{Benchmarking for emotion recognition in DEAP dataset}
 \title{Towards An Unified Analysis Framework for EEG-based Emotion Recognition}
 
-
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{4} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -120,9 +119,9 @@ and education \cite{}.
 
 EEG-based emotion recognition usually follows a sequence 
 of steps, such as  stimuli selection, feature selection and 
-engineering, classification and evaluation \cite{}. Literature reports 
-a high level of heterogeneity on each of these steps, given 
-the inherent richness of the data (usually captured through 
+engineering, classification and evaluation \cite{}. Literature 
+reports a high level of heterogeneity on each of these steps, 
+given the inherent richness of the data (usually captured through 
 a sophisticated configuration of electrodes), the multimodality 
 of the stimuli and the wide range of analysis tools. Although 
 this could be seen as a beneficial element, the recent increment
@@ -177,12 +176,13 @@ the conclusions and the future work.
 \section{Data Sources Analysis}
 \label{data}
 
-Literature shows several attempts  to provide robust datasets for EEG based 
+Literature shows several attempts  to provide datasets for EEG-based 
 emotion recognition. These approaches differ in many factors, such as  nature 
 of the stimuli and number and type of participants. In this section,  a detailed 
 summary is provided, followed by a qualitative and quantitative
-comparison.  The goal is to highlight the strengths and limitation in order to 
-facilitate the selection, given  a specific goal.
+comparison.  The goal is to highlight the strengths and limitations in order to 
+facilitate the selection, given  a specific goal. The following list is based on 
+information available online by May 2015.
 
 \subsection{DEAP}
 Koelstra et al. \cite{deap2011} released the Database for Emotion Analysis 
@@ -197,8 +197,16 @@ unused channels and 1 status channel) at a sample rate of 512Hz. Due to
  different revision of the hardware, there are some minor differences in the 
  format, mainly regarding to the order of the  channels.
 
+ \subsection{MAHNOB-HCI}
+ In 2012, Soleymani et al. \cite{soleymani2012multimodal} published the MAHNOB-HCI\footnote{http://mahnob-db.eu}, a Multimodal Database for Affect Recognition and Implicit Tagging. Face videos, audio signals, eye gaze data and peripheral/central nervous system physiological signals are available for researchers in those mentioned fields. The characteristics of the database include a total of 27 subjects (11 male and 16 female) with ages between 19 and 40 years old (M=26.06; SD=4.39), and the following recordings: 32-channel EEG (256 Hz); peripheral physiological signals(256 HZ); face and body videos using 6 cameras (60 f/s); eye gaze (60 Hz) and audio (44.1 Hz). This work includes two experiments, the first one was related to the emotional responses to visual stimuli (videos), for which 20 videos were selected for subjects to self-assess using emotional keywords, arousal, valence, dominance and predictability. Experiment 2 was related to implicit tagging and subjects had to report (dis)agreement to the displayed tag for 28 images and 14 videos.
+ 
 
-\subsection{Otros...}
+\subsection{eNTERFACE'06}
+In the context of Enterface 2006, the project Emotion Detection in the Loop from Brain Signals and Facial Images by Savran et al. \cite{enterface06} considered the creation of an affective assessment database\footnote{http://www.enterface.net/results/}. EEG, fNIRS (functional Near Infrared Spectroscopy) and peripheral signals, namely galvanic skin response (GSR), respiration and blood volume pressure were recorded in order to prove the feasibility of a multimodal approach for emotion recognition. Two experiments were conducted for collecting the data. The first one included 5 subjects who were asked to self assess the emotions elicited by diverse IAPS images of three classes (ecalm, exciting positive and exciting negative), while the mentioned responses were being recorded at 1024 Hz. The second experiment considered the display of three kind of emotions, neutral, happiness and disgust. In experiment 2, 16 subjects (10 male and 6 female; M=25 years old), where shown videos from the DaFEx database\footnote{https://i3.fbk.eu/resources/dafex-database-kinetic-facial-expressions} while face video and fNIRS where recorded.
+
+
+
+
 %For our research we used the famous dataset for the analysis of human affective states called
  %Database for Emotion Analysis using Physiological Signals (DEAP)~\cite{deap2011}. This
 % dataset contains electroencephalogram and peripheral physiological signals of 32 healthy
@@ -261,8 +269,8 @@ Additionally, as it is well known that the performance of any
 classification method depends on the representation of the data 
 \cite{bengio2013representation}, 
 we propose a way to adapt a Convolutional Neural 
-Network approach to classify emotions, in order to compare  manually
-crafted and automatic feature selection. 
+Network approach to classify emotions, in order to compare  
+manually crafted and automatic feature selection. 
 
 \subsection{ Multi-Modal Bio-Potential Signals}	
 
@@ -371,13 +379,75 @@ results are better comparing when frequency domain features are not used.
 
 Liu et. al. in \cite{liu2013}
 
-\subsection{Murugappan method (2010)}	
+%\subsection{Murugappan method (2010)}	
 
-Murugappan et al. have quite an interesting story related to the emotion assessment through EEG analysis. Starting from 2008, several studies could be found in literature corresponding to this author, using different combinations of features, EEG channels and algorithms in order to classify discrete emotions such as disgust, happy, surprise, sad and anger.(CITAR los paper de muru).
+%Murugappan et al. have quite an interesting story related to the emotion assessment through EEG analysis. Starting from 2008, several studies could be found in literature corresponding to this author, using different combinations of features, EEG channels and algorithms in order to classify discrete emotions such as disgust, happy, surprise, sad and anger.(CITAR los paper de muru).
 
-For the present benchmark, we are centered in one of the mentioned Murugappan's works, where an experiment was conducted for collecting EEG data of 20 subjects, for the classification of five emotions, namely disgust, happy, surprise, fear and neutral. A wavelet-based approach was performed, three different features were proposed for the analysis and two classifiers were used, obtaining a maximimum average classification rate of 83.26\% with KNN and 75,21\% with LDA \cite{Murugappan2010Classification}.
+%For the present benchmark, we are centered in one of the mentioned Murugappan's works, where an experiment was conducted for collecting EEG data of 20 subjects, for the classification of five emotions, namely disgust, happy, surprise, fear and neutral. A wavelet-based approach was performed, three different features were proposed for the analysis and two classifiers were used, obtaining a maximimum average classification rate of 83.26\% with KNN and 75,21\% with LDA \cite{Murugappan2010Classification}.
+
+%Since Murugappan is an active actor in the emotion recognition field, turns to be important to include this study in benchmark and see how those proposed features behave with the DEAP dataset.
+
+\subsection{Wavelet Decomposition Method}	
+
+Murugappan et al. have quite an interesting story related to the emotion assessment through EEG analysis. Starting from 2008, several studies could be found in literature corresponding to this author, using different combinations of features, EEG channels and algorithms in order to classify discrete emotions such as disgust, happy, surprise, sad and anger \cite{murugappan2008time,murugappan2009wavelet}.
+
+For the present benchmark, we are centered in one of the mentioned Murugappan's works, where an experiment was conducted for collecting EEG data of 20 subjects, for the classification of five emotions, namely disgust, happy, surprise, fear and neutral. A wavelet-based approach was performed, three different features were proposed for the analysis and two classifiers were used, obtaining a maximimum average classification rate of 83.26\% with KNN and 75,21\% with LDA \cite{murugappan2010classification}.
 
 Since Murugappan is an active actor in the emotion recognition field, turns to be important to include this study in benchmark and see how those proposed features behave with the DEAP dataset.
+
+\subsubsection{Data Collection}
+
+The data acquisition process considered a randomly ordered presentation of emotionally selected video clips with different time durations. The protocol followed consisted of presenting natural scene pictures and a ``soothing music'' for several seconds before the experimental session, which made subjects feel calm and mind relaxed. Later, 5 trials for disgust, happy and surprised emotions were followed by 4 trials of fear and neutral emotions. EEG data of 64 channels at a 256 HZ sampling rate were collected with the Nevus EEG device, whose electrodes were placed according to the International 10-10 system. A total number of 20 subjects took the experiment (3 females  and 17 males with ages between 21 and 39 years old).
+
+\subsubsection{Feature Extraction}
+
+Murugappan's approach takes into account the utilization of two sorts of features: Statistical and Wavelet-based. Based in previous section (Takahashi method), we are not performing statistical feature analysis, thus we focus on the proposed wavelet features.
+
+The "db4" wavelet function is used to separate the EEG signals into 5 levels of decomposition, and three frequency bands (alpha, beta and gamma) are considered for deriving the following features:
+
+\begin{enumerate}
+\item \textit{Recoursing Energy Efficiency (REE)}, defined as
+
+\begin{equation}
+REE_(\gamma-3b) = \frac{E_\gamma}{E_(total-3b)}
+\end{equation}
+\label{ec:ree}
+
+\item \textit{Logarithmic REE (LREE)}, 
+
+\begin{equation}
+LREE = \log(REE)
+\end{equation}
+\label{ec:lree}
+
+\item \textit{Absolute Logarithmic REE (ALREE)}, 
+
+\begin{equation}
+ALREE = \mathopen|LREE\mathclose|
+\end{equation}
+\label{ec:alree}
+
+
+\end{enumerate}
+
+Where the total energy of the three bands is:
+
+\begin{equation}
+E_(total-3b) = E_\alpha + E_\beta + E_\gamma
+\end{equation}
+
+\subsubsection{Emotion Recognition Method}
+
+The process of emotion recognition used by Murugappan consisted in the utilization of two machine learning algorithms, namely K-Nearest Neighbors (KNN) and Linear Discriminant Analysis (LDA), along with a 5-fold cross validation. The same process was applied in this research for classifiying three states of emotion in the valence dimension, such as \emph{positive}, \emph{neutral} and \emph{negative}.
+
+Since the best results obtained by Murugappan were those related with the wavelet energy-based features and the maximum amount of EEG channels (64), we include the same features and our maximum quantity of electrodes (32). We used a 5-Fold Cross Validation method for evaluation.
+
+Contrary to the original results, in our case KNN performed worse than LDA, with accuracies of 41,56\% and 63,28\% respectively with the best behaved feature, ALREE. In \cite{jenke2014feature}, a Quadratic Discriminant Analysis (QDA) classifier is used for emotion recognition with different features, thus for keeping on comparing performances, QDA was applied in the same for, with 70,31\% accuracy for LREE feature as the best result.
+
+\subsubsection{Related}
+Wang et al. \cite{wang2014} used diverse features for classifying emotional states from EEG data analysis. With a wavelet-based focus, authors obtained an accuracy of 78.41\% for the wavelet Entropy feature, with a linear SVM model.
+
+
 
 \subsection{Convolutional Neural Networks}
 
@@ -441,6 +511,9 @@ range from 1 to 9).
 
 For the evaluation we adopted the \emph{leave-one-out} cross validation technique (LOOCV).
 
+
+
+
 \subsection{ Results and Analysis}
 
 Given 
@@ -448,6 +521,10 @@ Given
 
 
 \subsection{Remarks}
+
+
+
+The code used in this empirical study is available at : 
 
 \section{Discussion}
 \label{discussion}
@@ -463,19 +540,36 @@ threats to the validity of the results.
 
 \textbf{Internal validity: }  ****hablar sobre la metrica
 
-\textbf{External validity: } ****hablar que faltan otros metodos
+\textbf{External validity: } In this study, we chose only three approaches
+for comparison. 
 
 \textbf{ Construct validity: } 
 
 
 \subsection{Feasibility}
 
-
-
 %\section{Related Work}
 
-\section{Conclusions}
+\section{Conclusions and  Future Work}
 \label{conclusion}
+
+In this paper, we proposed the first step towards the unification 
+
+
+Our future work is aimed in two directions. Firstly, as a broad
+goal, our idea is to continue replicating and  storing EEG-based 
+classification methods reported in the literature. With this, we hope
+to generate a public repository where the community of researchers
+could carry out studies and visualize improvements in  a easier way. 
+With this we hope to contribute to field by providing a benchmark
+framework for emotion classification.
+
+Secondly, given the promising results obtained by CNN, we are
+interested on studying how the hyperparameter setup affects the 
+performance of the classification. To this end, we are currently testing
+the use of bayesian optimization as well as other unsupervised methods.
+
+
 
 %
 % The following two commands are all you need in the

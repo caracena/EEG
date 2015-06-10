@@ -3,46 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sig-alternate.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
-Warning--I didn't find a database entry for "Murugappan2010Classification"
-You've used 13 entries,
+Warning--I didn't find a database entry for "wang2014"
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            586 strings with 6461 characters,
-and the built_in function-call counts, 5857 in all, are:
-= -- 562
-> -- 309
-< -- 8
-+ -- 122
-- -- 107
-* -- 438
-:= -- 923
-add.period$ -- 41
-call.type$ -- 13
-change.case$ -- 91
+            607 strings with 7305 characters,
+and the built_in function-call counts, 7364 in all, are:
+= -- 699
+> -- 400
+< -- 12
++ -- 156
+- -- 138
+* -- 560
+:= -- 1160
+add.period$ -- 51
+call.type$ -- 16
+change.case$ -- 112
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 224
-empty$ -- 435
-format.name$ -- 107
-if$ -- 1255
+cite$ -- 16
+duplicate$ -- 283
+empty$ -- 542
+format.name$ -- 138
+if$ -- 1583
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 68
-num.names$ -- 28
-pop$ -- 101
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 36
+pop$ -- 124
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 96
 quote$ -- 0
-skip$ -- 173
+skip$ -- 220
 stack$ -- 0
-substring$ -- 383
-swap$ -- 79
-text.length$ -- 8
+substring$ -- 463
+swap$ -- 104
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 64
 warning$ -- 0
-while$ -- 50
-width$ -- 15
-write$ -- 147
+while$ -- 62
+width$ -- 18
+write$ -- 183
 (There was 1 warning)
