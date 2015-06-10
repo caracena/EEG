@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  10 JUN 2015 12:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.1)  10 JUN 2015 20:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,99 +397,105 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `soleymani2012multimodal' on page \thepage  undefined o
-n input line 201.
-
-
-LaTeX Warning: Citation `enterface06' on page \thepage  undefined on input line
- 205.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 [][][]\T1/aer/m/n/9 https://i3.fbk.eu/resources/dafex-database-kinetic-facial-
+ []
+
+
+Overfull \hbox (15.6084pt too wide) in paragraph at lines 322--322
+[]\secfnt EEG-BASED EMO-TION CLAS-SI-FI-CA-TION 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.326 \item S
-             tandard Deviation:  $\sigma_{X} = \sqrt{ \frac{1}{N}\sum^{N}_{n...
-[2]
-Overfull \hbox (1.14195pt too wide) in paragraph at lines 345--350
+l.365 
+       [2]
+Overfull \hbox (1.14195pt too wide) in paragraph at lines 410--415
 []\T1/aer/m/n/9 Following the same method of fea-ture ex-trac-tion for DEAP
  []
 
 
-Overfull \hbox (7.60107pt too wide) in paragraph at lines 353--360
+Overfull \hbox (7.60107pt too wide) in paragraph at lines 418--425
 \T1/aer/m/n/9 bio-potentials sig-nals. First, a Sup-port Vec-tor Ma-chine (SVM)
 
+ []
+
+
+Overfull \hbox (12.91425pt too wide) in paragraph at lines 474--475
+[]\T1/aer/m/it/9 Recoursing En-ergy Ef-fi-ciency:  $\OML/cmm/m/it/9 REE[]^^M \O
+MS/cmsy/m/n/9 ^^@ \OT1/cmr/m/n/9 3\OML/cmm/m/it/9 b\OT1/cmr/m/n/9 ) = []$ 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.435 \begin{equation}
-                       [3]
+l.476 \item \textit
+                   {Logarithmic REE: } $LREE = \log(REE)$ [3]
 
-LaTeX Warning: Citation `wang2014' on page \thepage  undefined on input line 44
-8.
+LaTeX Warning: Citation `wang2014' on page \thepage  undefined on input line 49
+3.
 
-(./sig-alternate.bblpdfTeX warning (ext4): destination with the same identifier
- (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.8 
-     [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 591.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 \end{document}
+l.611 \textbf{ Construct validity: }
+                                     [4] (./sig-alternate.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.656 \end{document}
                      [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
  (./sig-alternate.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 591.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
-Package rerunfilecheck Info: File `sig-alternate.out' has not changed.
-(rerunfilecheck)             Checksum: 8013FB9085E03466E44E800C73564CB0;1788.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 591.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 656.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 656.
+
+
+Package rerunfilecheck Warning: File `sig-alternate.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `sig-alternate.out':
+(rerunfilecheck)             Before: EF43E261A4CB1B2A3322E26DC1573091;1970
+(rerunfilecheck)             After:  1FFFB74597782E72109D0391137F84D0;1979.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 656.
  ) 
 Here is how much of TeX's memory you used:
- 6397 strings out of 493315
- 90496 string characters out of 6137905
- 182569 words of memory out of 5000000
- 9692 multiletter control sequences out of 15000+600000
+ 6401 strings out of 493315
+ 90676 string characters out of 6137905
+ 182629 words of memory out of 5000000
+ 9693 multiletter control sequences out of 15000+600000
  51664 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,16n,29p,1172b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,16n,29p,748b,405s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmu10.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on sig-alternate.pdf (5 pages, 206428 bytes).
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmu10.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on sig-alternate.pdf (5 pages, 222723 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

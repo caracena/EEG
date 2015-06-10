@@ -58,7 +58,7 @@
 %\title{Benchmarking for emotion recognition in DEAP dataset}
 \title{Towards An Unified Analysis Framework for EEG-based Emotion Recognition}
 
-\numberofauthors{4} %  in this sample file, there are a *total*
+\numberofauthors{1} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -89,7 +89,31 @@ some people
 
 \maketitle
 \begin{abstract}
-\vspace{6cm}
+EEG-based emotion classification research is characterized 
+by a sequence of steps, where  prepossessing and feature 
+engineering have a preponderant role, given the richness 
+and complexity of the data under study. This
+has led to a a high number proposed methodologies in 
+recent years. Although this is positive, it naturally makes it 
+difficult to easy visualize and compare, as each method
+usually uses its own dataset and evaluation metric and
+without providing enough detail (or code) for replication. In 
+an attempt to formalize the analysis and 
+evaluation methodologies, in this paper it is presented the 
+initial step towards a unified analysis framework. We performed 
+a replication study  on two of the most  representative 
+approaches for classification and evaluate them using a
+unique metric on the DEAP dataset.
+
+As the feature extraction represents one of the most 
+heterogeneous and also laborious steps, we propose 
+an alternative based  the use  of a  Convolutional 
+Neural Network, with the aim to study if a setting 
+where the model automatically learn to represent  
+the data can be competitive in comparison with 
+manually crafted features. Results of our empirical 
+study show that...TODO
+
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -121,13 +145,14 @@ EEG-based emotion recognition usually follows a sequence
 of steps, such as  stimuli selection, feature selection and 
 engineering, classification and evaluation \cite{}. Literature 
 reports a high level of heterogeneity on each of these steps, 
-given the inherent richness of the data (usually captured through 
-a sophisticated configuration of electrodes), the multimodality 
-of the stimuli and the wide range of analysis tools. Although 
-this could be seen as a beneficial element, the recent increment
- in reported approaches makes it difficult to perform a reliable 
-comparison to assess the real impact, applicability  and level 
-of generalization that the current studies.  Our vision is that, 
+given the inherent richness of the data (usually captured 
+through  a sophisticated configuration of electrodes), the 
+multimodality  of the stimuli and the wide range of analysis 
+tools. Although this could be seen as a beneficial element, 
+the recent increment in reported approaches makes it 
+difficult to perform a reliable  comparison to assess the 
+real impact, applicability  and level  of generalization that 
+the current studies.  Our vision is that, 
 based on the collaborative work with other members of the 
 community, in the future it will be possible to have a solid 
 benchmark that could increase the performance and pace 
@@ -161,7 +186,7 @@ and the valence of emotions.
 
 We performed an initial empirical study to compare the collected 
 emotion classification methods based on an unified way.  Our results 
-show that ... ******* mostrar resultados y coclusiones...
+show that ... ******* TODO
 
 The rest of the paper is structured as follows. Section \ref{data} 
 explores the publicly  available EEG datasets for emotion 
@@ -173,7 +198,7 @@ methods. Section \ref{discussion} discusses the results and the
 limitations of the analysis. Finally, Section \ref{conclusion} outlines 
 the conclusions and the future work. 
 
-\section{Data Sources Analysis}
+\section{Available Datasets Description}
 \label{data}
 
 Literature shows several attempts  to provide datasets for EEG-based 
@@ -198,15 +223,55 @@ unused channels and 1 status channel) at a sample rate of 512Hz. Due to
  format, mainly regarding to the order of the  channels.
 
  \subsection{MAHNOB-HCI}
- In 2012, Soleymani et al. \cite{soleymani2012multimodal} published the MAHNOB-HCI\footnote{http://mahnob-db.eu}, a Multimodal Database for Affect Recognition and Implicit Tagging. Face videos, audio signals, eye gaze data and peripheral/central nervous system physiological signals are available for researchers in those mentioned fields. The characteristics of the database include a total of 27 subjects (11 male and 16 female) with ages between 19 and 40 years old (M=26.06; SD=4.39), and the following recordings: 32-channel EEG (256 Hz); peripheral physiological signals(256 HZ); face and body videos using 6 cameras (60 f/s); eye gaze (60 Hz) and audio (44.1 Hz). This work includes two experiments, the first one was related to the emotional responses to visual stimuli (videos), for which 20 videos were selected for subjects to self-assess using emotional keywords, arousal, valence, dominance and predictability. Experiment 2 was related to implicit tagging and subjects had to report (dis)agreement to the displayed tag for 28 images and 14 videos.
+ In 2012, Soleymani et al. \cite{soleymani2012multimodal} published 
+ the MAHNOB-HCI\footnote{http://mahnob-db.eu}, a Multimodal 
+ Database for Affect Recognition and Implicit Tagging. Face videos,
+  audio signals, eye gaze data and peripheral/central nervous system 
+  physiological signals are available for researchers in those mentioned 
+  fields. The characteristics of the database include a total of 27 
+  subjects (11 male and 16 female) with ages between 19 and 40 years 
+  old (M=26.06; SD=4.39), and the following recordings: 32-channel 
+  EEG (256 Hz); peripheral physiological signals(256 HZ); face and 
+  body videos using 6 cameras (60 f/s); eye gaze (60 Hz) and audio 
+  (44.1 Hz). This work includes two experiments, the first one was 
+  related to the emotional responses to visual stimuli (videos), for 
+  which 20 videos were selected for subjects to self-assess using 
+  emotional keywords, arousal, valence, dominance and predictability. 
+  The second experiment was related to implicit tagging and subjects had to 
+  report (dis)agreement to the displayed tag for 28 images and 14 videos.
  
 
 \subsection{eNTERFACE'06}
-In the context of Enterface 2006, the project Emotion Detection in the Loop from Brain Signals and Facial Images by Savran et al. \cite{enterface06} considered the creation of an affective assessment database\footnote{http://www.enterface.net/results/}. EEG, fNIRS (functional Near Infrared Spectroscopy) and peripheral signals, namely galvanic skin response (GSR), respiration and blood volume pressure were recorded in order to prove the feasibility of a multimodal approach for emotion recognition. Two experiments were conducted for collecting the data. The first one included 5 subjects who were asked to self assess the emotions elicited by diverse IAPS images of three classes (ecalm, exciting positive and exciting negative), while the mentioned responses were being recorded at 1024 Hz. The second experiment considered the display of three kind of emotions, neutral, happiness and disgust. In experiment 2, 16 subjects (10 male and 6 female; M=25 years old), where shown videos from the DaFEx database\footnote{https://i3.fbk.eu/resources/dafex-database-kinetic-facial-expressions} while face video and fNIRS where recorded.
+In the context of Enterface 2006, the project Emotion Detection
+ in the Loop from Brain Signals and Facial Images by Savran 
+ et al. \cite{savran12006emotiondetection} considered the 
+ generation of an affective assessment 
+ database\footnote{http://www.enterface.net/results/}. 
+ EEG, fNIRS (functional Near Infrared Spectroscopy) and peripheral 
+ signals, namely galvanic skin response (GSR), respiration and blood 
+ volume pressure were recorded in order to prove the feasibility of 
+ a multimodal approach for emotion recognition. Two experiments 
+ were conducted for collecting the data. The first one included 5 subjects 
+ who were asked to self assess the emotions elicited by diverse 
+ IAPS\footnote{http://csea.phhp.ufl.edu/media.html} images of 
+ three classes (calm, exciting positive and exciting negative), while 
+ the mentioned responses were being recorded at 1024 Hz. The 
+ second experiment considered the display of three kind of 
+ emotions, neutral, happiness and disgust. In experiment 2, 16 
+ subjects (10 male and 6 female; M=25 years old), where shown 
+ videos from the DaFEx 
+ database\footnote{https://i3.fbk.eu/resources/dafex-database-kinetic-facial-expressions} while face video and fNIRS where recorded.
 
+\subsection{Selection}
 
-
-
+Based on the data sets described, we consider DEAP as the most
+complete source for analysis. Firstly, it provides the highest number of
+participants and the highest number of instances, in this case, one minute
+length music video clips (also available online). Secondly, it provides the
+ most reliable two way emotion tagging data, making it more flexible to 
+ study the labels in the classification problem. Lastly, in terms of accessibility
+ and ease of use,  DEAP provides the most structured schema.
+ 
 %For our research we used the famous dataset for the analysis of human affective states called
  %Database for Emotion Analysis using Physiological Signals (DEAP)~\cite{deap2011}. This
 % dataset contains electroencephalogram and peripheral physiological signals of 32 healthy
@@ -254,7 +319,7 @@ In the context of Enterface 2006, the project Emotion Detection in the Loop from
 %\end{table}       	
 	
 
-\section{EEG based Recognition Models}
+\section{EEG-based Emotion Classification }
 \label{methods}
 	
 Based on the work of Jenke et al.\cite{jenke2014feature}, where a 
@@ -270,7 +335,7 @@ classification method depends on the representation of the data
 \cite{bengio2013representation}, 
 we propose a way to adapt a Convolutional Neural 
 Network approach to classify emotions, in order to compare  
-manually crafted and automatic feature selection. 
+manually crafted and automatic feature generation. 
 
 \subsection{ Multi-Modal Bio-Potential Signals}	
 
@@ -348,7 +413,7 @@ features related with pulse could not be added. As a result we generate
 a feature vector with 192 columns related to EEG (32 channel x 6 statistical 
 features) plus 6 columns related to skin conductance.
 
-\subsubsection{Emotion Recognition method}
+\subsubsection{Emotion Recognition Method}
 
 This study used two algorithms to classify emotions given bio-potentials signals.
 First, a Support Vector Machine (SVM) using a multiclass classification is designed under 
@@ -406,35 +471,15 @@ Murugappan's approach takes into account the utilization of two sorts of feature
 The "db4" wavelet function is used to separate the EEG signals into 5 levels of decomposition, and three frequency bands (alpha, beta and gamma) are considered for deriving the following features:
 
 \begin{enumerate}
-\item \textit{Recoursing Energy Efficiency (REE)}, defined as
+\item \textit{Recoursing Energy Efficiency: } $REE_(\gamma-3b) = \frac{E_\gamma}{E_(total-3b)}$ 
 
-\begin{equation}
-REE_(\gamma-3b) = \frac{E_\gamma}{E_(total-3b)}
-\end{equation}
-\label{ec:ree}
-
-\item \textit{Logarithmic REE (LREE)}, 
-
-\begin{equation}
-LREE = \log(REE)
-\end{equation}
-\label{ec:lree}
-
-\item \textit{Absolute Logarithmic REE (ALREE)}, 
-
-\begin{equation}
-ALREE = \mathopen|LREE\mathclose|
-\end{equation}
-\label{ec:alree}
-
+\item \textit{Logarithmic REE: } $LREE = \log(REE)$
+\item \textit{Absolute Logarithmic REE: } $ALREE = \mathopen|LREE\mathclose|$
 
 \end{enumerate}
 
 Where the total energy of the three bands is:
-
-\begin{equation}
-E_(total-3b) = E_\alpha + E_\beta + E_\gamma
-\end{equation}
+$E_(total-3b) = E_\alpha + E_\beta + E_\gamma$
 
 \subsubsection{Emotion Recognition Method}
 
@@ -444,40 +489,51 @@ Since the best results obtained by Murugappan were those related with the wavele
 
 Contrary to the original results, in our case KNN performed worse than LDA, with accuracies of 41,56\% and 63,28\% respectively with the best behaved feature, ALREE. In \cite{jenke2014feature}, a Quadratic Discriminant Analysis (QDA) classifier is used for emotion recognition with different features, thus for keeping on comparing performances, QDA was applied in the same for, with 70,31\% accuracy for LREE feature as the best result.
 
-\subsubsection{Related}
+\subsubsection{Related Approaches}
 Wang et al. \cite{wang2014} used diverse features for classifying emotional states from EEG data analysis. With a wavelet-based focus, authors obtained an accuracy of 78.41\% for the wavelet Entropy feature, with a linear SVM model.
 
-
-
-\subsection{Convolutional Neural Networks}
+\subsection{Convolutional Neural Network Method}
 
 The recent renaissance in Artificial Neural Network research 
 through the so-called \emph{deep learning}, has led us explore 
 the use of these sets of techniques for EEG-based emotion 
-recognition. in that sense, we interested in testing if the ability
+recognition. In that sense, we interested in testing if the ability
 to automatically learn  hierarchical feature representations can
 improve the classification accuracy in this domain. 
 
-As stated in \cite{stober2014using} EEG can be can be modeled 
+As stated in \cite{stober2014using}, EEG can be can be modeled 
 just a waveform, using a one
 dimensional representation, or as a frequency spectrum, using 
-two dimensional representation.
+two dimensional representation. For simplicity, we chose a one
+dimensional representation. 
 
-\subsection{Architecture}
+In general terms, we modeled the problem as a multivariate time
+ series classification, performing automatic feature extraction 
+ locally on each individual channel and then combining them into
+  an aggregated input vector for a multilayer perceptron. In that 
+  sense, our approach resembles the work performed by Zheng et
+  al. in \cite{zheng2014time}.
+  
+\subsubsection{Network Configuration}
 
-Filter Layer 
+\textbf{Filter Layer:}  The raw signal is presented to the this layer where a 
+convolution filter  $f$ is applied. The size of this filters is known to influence 
+the performance of the classification \cite{lecun1995convolutional}, therefore it is necessary to test several 
+configurations.
 
-Activation Layer
+\textbf{Activation Layer:} This layer is the main responsible for providing non linearity
+to the overall mapping process with the aim to learn more complex relationships
+\cite{xing2010brief}.  
+Although $sigmoid$ function has been historically preferred, we additionally
+ studied the performance of  $RE LU$ function.
  
-Pooling Layer
+\textbf{Pooling Layer: } This layer performs a subsampling of the signal 
 
 
 
-\cite{lecun1995convolutional}
-\cite{zheng2014time}
-
-\cite{stober2014classifying}
-\cite{xing2010brief}
+\subsubsection{Implementation Details}
+In order to make use of GPU capabilities, we implemented this approach
+using the Torch 7 Machine Learning Library \cite{collobert2011torch7}
 
 \section{Empirical Study}
 \label{study}
@@ -497,37 +553,46 @@ each trial encapsulates the visualization of a video clip in the DEAP
 repository, we consider
 this level as the most appropriate to evaluate. It allows to perform 
 further analysis across different dimensions, for example, it is possible
-to obtain an aggregated performance score for each  trial (video) across all users. Similarly, it is possible to obtain the average accuracy for one 
+to obtain an aggregated performance score for each  trial (video) 
+across all users. Similarly, it is possible to obtain the average 
+accuracy for one 
 user across all trials.
 
-Given the above,  for the specific case of DEAP, it provides 32 subjects, 
-each with 40 instances. Therefore, it is expected as output for any classification method in this study, a  40 x 32 matrix  $O$ in  which each element $o_{ij}$ represents the predicted emotion class associated to the instance $i$ for the user $j$.
+Given the above,  for the specific case of DEAP, it provides 32
+subjects, 
+each with 40 instances. Therefore, it is expected as output for any 
+classification method in this study, a  40 x 32 matrix  $O$ in  which 
+each element $o_{ij}$ represents the predicted emotion class 
+associated to the instance $i$ for the user $j$.
  
-Another relevant aspect is to choose the representation of the class itself. DEAP provides several  values that can be used to 
+Another relevant aspect is to choose the representation of the 
+class itself. DEAP provides several  values that can be used to 
 represent the polarity of an emotion . For simplicity, we chose to used 
 the pre-computed valence score  and discretize to three classes, 
 encoding the classes from three equal segments (reported scores
 range from 1 to 9). 
 
-For the evaluation we adopted the \emph{leave-one-out} cross validation technique (LOOCV).
-
-
-
-
+For the evaluation we adopted the \emph{leave-one-out} cross 
+validation technique (LOOCV)\cite{elisseeff2003leave,kearns1999algorithmic}
+TODO
 \subsection{ Results and Analysis}
 
-Given 
+We performed the emotion classification task for the three approaches presented
+using the DEAP dataset.
+
 
 
 
 \subsection{Remarks}
 
-
-
 The code used in this empirical study is available at : 
 
 \section{Discussion}
 \label{discussion}
+
+The reported results show interesting aspects worth to discuss, specially 
+in relation to the replication and the level of generalization.
+
 
 \subsection{Threats to Validity}
 
@@ -553,7 +618,7 @@ for comparison.
 \section{Conclusions and  Future Work}
 \label{conclusion}
 
-In this paper, we proposed the first step towards the unification 
+In this paper, we proposed the first step towards the unification  TODO
 
 
 Our future work is aimed in two directions. Firstly, as a broad
@@ -562,13 +627,13 @@ classification methods reported in the literature. With this, we hope
 to generate a public repository where the community of researchers
 could carry out studies and visualize improvements in  a easier way. 
 With this we hope to contribute to field by providing a benchmark
-framework for emotion classification.
+framework for EEG-based emotion classification.
 
 Secondly, given the promising results obtained by CNN, we are
 interested on studying how the hyperparameter setup affects the 
 performance of the classification. To this end, we are currently testing
-the use of bayesian optimization as well as other unsupervised methods.
-
+the use of Bayesian optimization as well as testing unsupervised methods
+for pre-training.
 
 
 %

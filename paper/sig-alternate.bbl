@@ -6,6 +6,18 @@ Y.~Bengio, A.~Courville, and P.~Vincent.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 35(8):1798--1828, 2013.
 
+\bibitem{collobert2011torch7}
+R.~Collobert, K.~Kavukcuoglu, and C.~Farabet.
+\newblock Torch7: A matlab-like environment for machine learning.
+\newblock In {\em BigLearn, NIPS Workshop}, number EPFL-CONF-192376, 2011.
+
+\bibitem{elisseeff2003leave}
+A.~Elisseeff, M.~Pontil, et~al.
+\newblock Leave-one-out error and stability of learning algorithms with
+  applications.
+\newblock {\em NATO science series sub series iii computer and systems
+  sciences}, 190:111--130, 2003.
+
 \bibitem{jenke2014feature}
 R.~Jenke, A.~Peer, and M.~Buss.
 \newblock Feature extraction and selection for emotion recognition from eeg.
@@ -16,6 +28,12 @@ T.~Judd, F.~Durand, and A.~Torralba.
 \newblock A benchmark of computational models of saliency to predict human
   fixations.
 \newblock In {\em MIT Technical Report}, 2012.
+
+\bibitem{kearns1999algorithmic}
+M.~Kearns and D.~Ron.
+\newblock Algorithmic stability and sanity-check bounds for leave-one-out
+  cross-validation.
+\newblock {\em Neural Computation}, 11(6):1427--1453, 1999.
 
 \bibitem{deap2011}
 S.~Koelstra, C.~Muhl, M.~Soleymani, J.-S. Lee, A.~Yazdani, T.~Ebrahimi, T.~Pun,
@@ -63,11 +81,16 @@ O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
 \newblock {ImageNet Large Scale Visual Recognition Challenge}.
 \newblock {\em International Journal of Computer Vision (IJCV)}, 2015.
 
-\bibitem{stober2014classifying}
-S.~Stober, D.~J. Cameron, and J.~A. Grahn.
-\newblock Classifying eeg recordings of rhythm perception.
-\newblock In {\em 15th International Society for Music Information Retrieval
-  Conference (ISMIR’14)}, pages 649--654, 2014.
+\bibitem{savran12006emotiondetection}
+A.~Savran, K.~Ciftci, G.~Chanel, J.~C. Mota, L.~H. Viet, B.~Sankur, L.~Akarun,
+  A.~Caplier, and M.~Rombaut.
+\newblock Emotion detection in the loop from brain signals and facial images.
+\newblock pages 60--80, 2006.
+
+\bibitem{soleymani2012multimodal}
+M.~Soleymani, J.~Lichtenauer, T.~Pun, and M.~Pantic.
+\newblock A multimodal database for affect recognition and implicit tagging.
+\newblock {\em Affective Computing, IEEE Transactions on}, 3(1):42--55, 2012.
 
 \bibitem{stober2014using}
 S.~Stober, D.~J. Cameron, and J.~A. Grahn.
