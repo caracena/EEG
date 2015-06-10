@@ -47,6 +47,7 @@
 
 \documentclass{sig-alternate}
 \usepackage{hyperref}
+\usepackage{color}
 \begin{document}
 %
 % --- Author Metadata here ---
@@ -366,7 +367,18 @@ In the case of ANN method, for 5 emotions the results was 31.7\% and for 3 emoti
 To build a similar process using DEAP dataset, we used A SVM algorithm using a
 one-vs-all method and a Gaussian function is used as a kernel function. 
 
-\subsubsection{Related Work}
+\subsubsection{Replication Steps}
+{\color{red} no se si esta seccion se conecta totalmente, me refiero a los pasos y a
+otros trabajos que se han hecho}
+
+In order to replicate the method used by Takahashi over DEAP dataset the following 
+steps were applied:
+\begin{enumerate}
+\item Calculate statistical features per subject per trial over each channel (198 features).
+\item Once features are obtained, a SVM algorithm was carried out using a configuration 
+as similar as the original method.
+\item Evaluate using a one-leave-out subject method. 
+\end{enumerate}
 
 As this work is one of the first in using statistical variables from 
 bio-potentials signals over machine learning algorithms, there are other works
@@ -377,7 +389,11 @@ and used the same statistical features for the analysis, but also
 added frequency domain features such as Fast Fourier Transform. His
 results are better comparing when frequency domain features are not used.
 
-Liu et. al. in \cite{liu2013}
+Liu et. al. in \cite{liu2013} made their own experiment using the emerging 
+device EPOC\footnote{https://emotiv.com/epoc.php}. In this research the
+authors used statistical and fractal dimension features to recognize 
+emotions from 2 up to 9 classes. As a way of comparison, this study
+used DEAP dataset reaching promising results.
 
 %\subsection{Murugappan method (2010)}	
 
@@ -543,7 +559,13 @@ threats to the validity of the results.
 \textbf{External validity: } In this study, we chose only three approaches
 for comparison. 
 
-\textbf{ Construct validity: } 
+\textbf{Construct validity: } One of the objectives of this study is 
+to replicate methods from the state of the art in emotion recognition.
+This is not a straightforward task due to the available information of each method 
+and the set of steps that have to be follow to achieve the best results.
+Some researches explain each detail of their implementation, then it is more 
+likely to reproduce them. However, not always this is the case and some steps 
+have to be tuned according the dataset under study.    
 
 
 \subsection{Feasibility}
